@@ -1,0 +1,2913 @@
+{
+  "x1Card": "X1 Card",
+  "help": "Help",
+  "back": "返回",
+  "allWallets": "所有钱包",
+  "buttons": {
+    "addWallet": "添加钱包",
+    "addAccount": "添加账户",
+    "syncWallets": "同步钱包",
+    "addToken": "添加代币",
+    "reverify": "重新验证",
+    "continue": "继续",
+    "confirm": "确认",
+    "skip": "跳过",
+    "send": "发送",
+    "receive": "接收",
+    "back": "返回",
+    "retry": "重试",
+    "update": "更新",
+    "cancel": "取消",
+    "reset": "重置",
+    "done": "完成",
+    "close": "关闭",
+    "report": "报告",
+    "help": "帮助",
+    "stop": "停止",
+    "exit": "退出",
+    "resync": "重新同步",
+    "showAll": "显示全部",
+    "connect": "连接",
+    "disconnect": "断开连接",
+    "reject": "拒绝",
+    "check": "检查",
+    "authenticate": "认证",
+    "start": "开始",
+    "setPassword": "设置密码",
+    "changePassword": "更改密码",
+    "removePassword": "移除密码",
+    "details": "详情",
+    "showQRCode": "显示二维码",
+    "editAccount": "编辑账户",
+    "submit": "提交",
+    "showMore": "显示更多",
+    "resendOTP": "重发",
+    "next": "下一步",
+    "setup": "设置",
+    "sync": "同步",
+    "learnMore": "了解更多",
+    "checkout": "结账",
+    "yes": "是",
+    "no": "否",
+    "saveAndContinue": "保存并继续",
+    "exitWithoutSaving": "不保存退出",
+    "saveChanges": "保存更改",
+    "edit": "编辑",
+    "tryAgain": "再试一次"
+  },
+  "tooltips": {
+    "downloadCsv": "导出为CSV"
+  },
+  "deviceAuthentication": {
+    "success": {
+      "title": "您的X1 Vault已成功认证"
+    },
+    "loading": {
+      "title": "请稍候，正在认证您的X1 Vault",
+      "subtitle": "操作进行中时，请勿断开您的X1 Vault"
+    }
+  },
+  "lockscreen": {
+    "title": "您的自主主权之门",
+    "passwordLabel": "输入密码以解锁 cySync",
+    "forgotPassword": "忘记密码？",
+    "incorrectPassword": "密码不正确",
+    "sameOldAndNewPassword": "新密码不能与旧密码相同",
+    "button": "解锁",
+    "forgotPasswordDialog": {
+      "title": "重置密码将重置您的 cySync 应用程序，您想继续吗？",
+      "subtext": "这将删除您 cySync 应用程序上的所有数据。请注意，这不会导致资产丢失"
+    }
+  },
+  "permissionSetup": {
+    "title": "在终端上运行以下命令以允许应用程序访问 USB 端口",
+    "subtext": "运行脚本后重新启动应用程序",
+    "checkbox": "我已经运行了该命令"
+  },
+  "addAccount": {
+    "header": "添加账户",
+    "select": {
+      "header": "选择您要添加的钱包和币种",
+      "searchText": "搜索",
+      "walletPlaceholder": "选择一个钱包",
+      "coinPlaceholder": "选择一个币种"
+    },
+    "deviceActions": {
+      "header": "按照X1 Vault上的说明进行操作",
+      "subtext": "将币种/账户添加到钱包",
+      "walletName": "${walletName}",
+      "actions": {
+        "verifyCoin": "在设备上验证币种",
+        "enterPassphrase": "输入密码短语",
+        "enterPin": "输入PIN并轻触任意卡片",
+        "tapCard": "轻触任意卡片"
+      }
+    },
+    "loader": {
+      "waitMessage": "此过程可能需要大约一分钟。请耐心等待"
+    },
+    "sync": {
+      "syncingHeader": "正在同步账户",
+      "header": "添加新账户",
+      "newAccount": "新账户",
+      "advancedButton": "显示所有地址类型",
+      "accountsNotSynced": "账户尚未同步 (${count})",
+      "deselectAllButton": "取消全选",
+      "selectAllButton": "全选",
+      "accountsInPortfolio": "账户已在投资组合中 (${count})",
+      "addAccountButton": "添加账户",
+      "resyncButton": "重新同步"
+    },
+    "congrats": {
+      "header": "添加币种/账户",
+      "subtext": "添加其他账户或返回投资组合",
+      "title": "账户添加成功",
+      "buttonAddMore": "添加更多"
+    },
+    "aside": {
+      "tabs": {
+        "asset": "资产",
+        "device": "X1 Vault",
+        "confirmation": "确认"
+      }
+    }
+  },
+  "addToken": {
+    "header": "添加代币",
+    "select": {
+      "header": "选择您想要添加的钱包、账户和代币",
+      "searchText": "搜索",
+      "walletPlaceholder": "选择钱包",
+      "tokenPlaceholder": "选择代币",
+      "accountPlaceholder": "选择账户",
+      "message": "${chainName} 账户需要先添加才能继续添加代币"
+    },
+    "congrats": {
+      "title": "代币添加成功",
+      "subtitle": "添加其他代币或返回投资组合",
+      "buttonAddMore": "添加更多"
+    }
+  },
+  "receive": {
+    "title": "接收",
+    "showAnywayButton": "没有设备？",
+    "source": {
+      "title": "接收",
+      "subtitle": "选择一个钱包和帐户进行入账",
+      "searchText": "搜索",
+      "walletPlaceholder": "选择一个钱包",
+      "accountPlaceholder": "入账帐户"
+    },
+    "x1Vault": {
+      "title": "按照X1 Vault上的说明进行操作",
+      "subtitle": "在您的设备上确认操作以完成",
+      "actions": {
+        "verifyCoin": "在设备上验证资产和钱包名称",
+        "enterPassphrase": "输入密码短语",
+        "enterPin": "输入PIN并点击任意卡片",
+        "tapCard": "点击任意卡片"
+      }
+    },
+    "receive": {
+      "title": {
+        "prefix": "在 ",
+        "accountIdPrefix": "账户 ID 为 ",
+        "principalIdPrefix": "主要 ID 为 ",
+        "suffix": "${walletName}中的地址"
+      },
+      "addressLabel": "地址",
+      "accountIdLabel": "账户 ID",
+      "principalIdLabel": "主要ID",
+      "actions": {
+        "verify": "验证X1 Vault上的地址与上面显示的地址完全匹配",
+        "verifyAccountId": "在X1 Vault上验证账户ID与上面显示的账户ID完全匹配",
+        "verifyPrincipalId": "在X1 Vault上验证主ID与上面显示的主ID完全匹配"
+      },
+      "messageBox": {
+        "warning": "此接收地址未经过设备验证。使用风险自负",
+        "accountIdWarning": "此接收账户ID未经设备验证。使用时请自担风险",
+        "principalIdWarning": "此接收主体ID未经设备验证。使用时请自担风险"
+      },
+      "waitMessageBox": {
+        "warning": "此过程可能需要大约一分钟。请耐心等待"
+      }
+    },
+    "congrats": {
+      "title": "地址验证成功",
+      "accountAndPrincipalIdTitle": "账户 ID 和主体 ID 验证成功"
+    },
+    "finalButtons": {
+      "secondary": "再次验证",
+      "secondaryUnverified": "验证地址",
+      "secondaryUnverifiedAccountId": "验证账户 ID",
+      "secondaryUnverifiedPrincipalId": "验证主体 ID",
+      "primary": "完成",
+      "continue": "继续"
+    },
+    "aside": {
+      "tabs": {
+        "source": "来源",
+        "device": "X1 Vault",
+        "receive": "接收"
+      }
+    }
+  },
+  "send": {
+    "title": "发送",
+    "fees": {
+      "header": [
+        {
+          "id": 1,
+          "label": "标准",
+          "type": "slider"
+        },
+        {
+          "id": 2,
+          "label": "高级",
+          "type": "input"
+        }
+      ],
+      "sliderLabels": [
+        {
+          "id": 1,
+          "name": "最小"
+        },
+        {
+          "id": 2,
+          "name": "平均"
+        },
+        {
+          "id": 3,
+          "name": "最大"
+        }
+      ],
+      "inputLabels": {
+        "gasPrice": "Gas 价格",
+        "gasLimit": "Gas 限制"
+      }
+    },
+    "source": {
+      "title": "来源",
+      "subtitle": "选择一个钱包和一个账户",
+      "searchText": "搜索",
+      "walletPlaceholder": "选择一个钱包",
+      "accountPlaceholder": "扣款账户"
+    },
+    "x1Vault": {
+      "title": "请按照 X1 Vault 上的说明进行操作",
+      "actions": {
+        "verifyCoin": "验证",
+        "verifyDetails": "在设备上验证交易详情",
+        "enterPassphrase": "输入密码短语",
+        "enterPin": "输入 PIN 并触碰任意卡片",
+        "tapCard": "触碰任意卡片"
+      },
+      "token": {
+        "info": "请记住 ${tokenName} 是一个 ${parentCoinName} 代币，因此 fee 将以 ${parentCoinUnit} 计算"
+      },
+      "messageBox": {
+        "warning": "始终确认设备上显示的地址与收件人提供的地址完全匹配"
+      }
+    },
+    "recipient": {
+      "title": "收件人",
+      "subtitle": "输入您要发送资金的收件人的金额和地址",
+      "recipient": {
+        "label": "收件人地址",
+        "labelSwap": "${provider}的地址",
+        "placeholder": "输入地址",
+        "error": "无效地址",
+        "ownAddress": "收件人地址与发件人地址相同"
+      },
+      "icpAccountIdRecipient": {
+        "label": "收件人账户 ID",
+        "labelSwap": "${provider}的账户ID",
+        "placeholder": "输入账户 ID",
+        "error": "无效的账户 ID",
+        "ownAddress": "收件人账户 ID 与发件人账户 ID 相同"
+      },
+      "icpPrincipalIdRecipient": {
+        "label": "收件人主体 ID",
+        "labelSwap": "${provider}的主体ID",
+        "placeholder": "输入主体 ID",
+        "error": "无效的主体 ID",
+        "ownAddress": "收件人主体 ID 与发件人主体 ID 相同"
+      },
+      "tabs": {
+        "single": "单笔交易",
+        "batch": "批量交易"
+      },
+      "amount": {
+        "label": "发送金额",
+        "placeholder": "0",
+        "toggle": "发送最大金额",
+        "dollar": "¥",
+        "error": "资金不足",
+        "zeroAmount": "金额不能为零",
+        "notOverDustThreshold": "金额低于 dust limit",
+        "amountBelowReserveBalance": "接收地址未激活。至少发送 ${amount} ${unit} 以激活它。",
+        "balanceBelowReserveBalance": "余额不能低于 ${amount} ${unit}"
+      },
+      "fees": {
+        "title": "费用",
+        "label": "网络费用"
+      },
+      "remarks": {
+        "label": "个人备注（可选）",
+        "placeholder": "在此输入您的个人备注",
+        "error": "超出最大字符限制（120 个字符）"
+      },
+      "warning": "如果 fee 太低，交易可能会被取消",
+      "feeError": "不允许交易 fee 为 0",
+      "notEnoughBalance": "交易资金不足",
+      "toggleText": {
+        "replace": "允许交易被替换（通过 fee 替换）",
+        "unconfirmed": "包括未确认的、可替换交易中的币"
+      },
+      "infoBox": "最大可花费金额为",
+      "addButton": "添加另一个收件人",
+      "destinationTag": {
+        "label": "目标标签",
+        "placeholder": "可选",
+        "error": "值过高"
+      },
+      "memo": {
+        "label": "备忘录（可选)",
+        "placeholder": "输入数字备注",
+        "error": "值过高"
+      },
+      "feeBelowMinError": "低于最低 fee 的交易将失败",
+      "rentExemptFeeWarning": "首次在 Solana 上接收代币会产生租金豁免费用，已包含在总费用中。"
+    },
+    "summary": {
+      "title": "摘要",
+      "from": "来自",
+      "to": "到",
+      "amount": "金额",
+      "network": "网络费",
+      "debit": "扣款总额",
+      "remarks": "个人备注",
+      "destinationTag": "目标标签",
+      "memo": "备忘录"
+    },
+    "finalMessage": {
+      "button": "查看交易",
+      "title": "交易已发送",
+      "hashLabel": "交易哈希",
+      "idLabel": "交易 ID",
+      "messageBox": {
+        "warning": "当 blockchain 确认交易后，您的账户余额将被更新"
+      }
+    },
+    "aside": {
+      "tabs": {
+        "source": "来源",
+        "recipient": "收件人",
+        "summary": "摘要",
+        "x1vault": "X1 Vault",
+        "confirm": "确认"
+      },
+      "timer": {
+        "title": "到期时间",
+        "minutes": "分钟",
+        "seconds": "秒"
+      }
+    },
+    "optimism": {
+      "deviceAction": "L1 费: ${fee}。您的 L1 费不会通过设备验证",
+      "l1": "（L1",
+      "l2": "（L2",
+      "suffix": "（L1 + L2"
+    },
+    "tron": {
+      "notEnoughEnergyWarning": "能量不足，这可能会导致高达 50 TRX 的费用"
+    }
+  },
+  "deployAccount": {
+    "title": "账户部署",
+    "x1Vault": {
+      "title": "请按照 X1 Vault 上的说明进行操作",
+      "actions": {
+        "verifyCoin": "验证",
+        "verifyDetails": "在设备上验证交易详情",
+        "enterPassphrase": "输入密码短语",
+        "enterPin": "输入 PIN 并触碰任意卡片",
+        "tapCard": "触碰任意卡片"
+      },
+      "token": {
+        "info": "请记住 ${tokenName} 是一个 ${parentCoinName} 代币，因此 fee 将以 ${parentCoinUnit} 计算"
+      },
+      "messageBox": {
+        "warning": "在您可以在Starknet上进行首次交易之前，您的账户需要被激活。这笔交易是为了在Starknet网络上部署您的账户"
+      }
+    },
+    "summary": {
+      "title": "摘要",
+      "from": "来自",
+      "account": "账户地址",
+      "fee": "最大部署费用",
+      "messageBox": {
+        "warning": "在您可以在Starknet上进行首次交易之前，您的账户需要被激活。这笔交易是为了在Starknet网络上部署您的账户",
+        "error": "您的账户余额不足以进行账户部署"
+      }
+    },
+    "finalMessage": {
+      "button": "继续",
+      "title": "账户成功部署",
+      "hashLabel": "交易哈希"
+    },
+    "aside": {
+      "tabs": {
+        "summary": "摘要",
+        "x1vault": "X1 Vault",
+        "confirm": "确认"
+      }
+    }
+  },
+  "history": {
+    "tableTitle": "交易",
+    "tableHeader": {
+      "time": "时间",
+      "asset": "资产",
+      "walletAndAccount": "钱包 / 账户",
+      "wallet": "钱包",
+      "account": "账户",
+      "amount": "金额",
+      "value": "价值"
+    },
+    "transactionStatus": {
+      "send": {
+        "failed": "发送失败",
+        "pending": "发送中",
+        "success": "已发送"
+      },
+      "receive": {
+        "failed": "接收失败",
+        "pending": "接收中",
+        "success": "已接收"
+      }
+    },
+    "dialogBox": {
+      "value": "价值",
+      "view": "在浏览器中查看",
+      "fee": "手续费",
+      "type": "类型",
+      "status": "状态",
+      "wallet": "钱包",
+      "account": "账户",
+      "asset": "资产",
+      "sender": "发送者",
+      "receiver": "接收者",
+      "mine": "我",
+      "transactionHash": "交易哈希",
+      "transactionId": "交易 ID",
+      "description": "描述",
+      "feePrefix": {
+        "optimism": "L2 "
+      },
+      "remarks": "个人备注",
+      "destinationTag": "目标标签",
+      "memo": "备忘录",
+      "operation": "操作"
+    },
+    "noData": {
+      "text": "尚无交易",
+      "subText": "今天接收加密货币，以在此查看您的交易历史",
+      "buttonText": "接收"
+    },
+    "search": {
+      "placeholder": "搜索...",
+      "notFound": {
+        "text": "未找到结果",
+        "subText": "请尝试搜索其他关键词"
+      }
+    }
+  },
+  "onboarding": {
+    "info": {
+      "aside": {
+        "title": "欢迎使用 cySync 应用",
+        "subTitle": "通往自我主权的门户"
+      },
+      "dialogBox": {
+        "title": "继续之前请确保以下几点",
+        "listItems": [
+          "你在一个安全的环境中",
+          "你有至少 10-15 分钟的时间来设置你的钱包",
+          "你有一个活跃的互联网连接",
+          "包装的防篡改密封完整",
+          "Cypherock 永远不会要求你提供种子词，也不会要求你签署交易",
+          "Cypherock 只会通过 cypherock.com 向你发送电子邮件。不要信任任何其他网站域名发来的邮件",
+          "你处于安全可靠的环境中",
+          "你有至少10-15分钟来设置你的钱包",
+          "包装的防篡改密封完好无损",
+          "Cypherock 永远不会向你询问助记词，也不会要求你签署交易",
+          "Cypherock 只会通过 cypherock.com 向你发送电子邮件。不要信任其他网站域名的电子邮件"
+        ]
+      }
+    },
+    "usage": {
+      "userNew": {
+        "title": "我第一次使用 Cypherock X1",
+        "note": "如果你以前从未使用过 Cypherock X1，请选择此选项"
+      },
+      "userExpert": {
+        "title": "我已经使用过 Cypherock X1",
+        "note": "如果你想将钱包迁移到新的 Cypherock X1，请选择此选项。在你丢失 X1 Vault 和一个或多个 X1 Card 的情况下可能需要这样做"
+      }
+    },
+    "terms": {
+      "title": "使用条款",
+      "subtext": "花一些时间查看我们的服务条款和隐私政策",
+      "bulletPoints": {
+        "terms": "服务条款",
+        "privacyPolicy": "隐私政策"
+      },
+      "consent": "我已阅读并同意使用条款和隐私政策"
+    },
+    "setPassword": {
+      "heading": "设置密码",
+      "title": "设置你的 cySync 密码 ",
+      "subtitle": "我们不在服务器上存储你的密码",
+      "success": "你的 cySync 密码已成功设置",
+      "newPasswordLabel": "新密码",
+      "confirmPasswordLabel": "确认密码",
+      "hint": "使用8个或更多字符，包括字母、数字和符号的混合"
+    },
+    "emailAuth": {
+      "heading": "电子邮件验证",
+      "title": "建议输入电子邮件ID作为2FA以获得真实性结果 ",
+      "subtitle": "我们不会将此电子邮件ID永久存储在我们的服务器上 ",
+      "success": "你的 cySync 密码已成功设置",
+      "enterEmailLabel": "电子邮件",
+      "placeholder": "电子邮件"
+    },
+    "deviceDetection": {
+      "heading": "设备连接",
+      "title": "连接你的 X1 Vault 到你的 PC 以继续",
+      "unavailable": {
+        "title": "你的 X1 Vault 无法通信",
+        "subtext": "尝试重新连接设备"
+      }
+    },
+    "deviceAuth": {
+      "heading": "设备验证",
+      "title": "你的 X1 Vault 现在将通过 Cypherock 服务器进行验证，以检查其真实性 ",
+      "subtext": "在操作期间请勿断开设备",
+      "success": {
+        "title": "你的 X1 Vault 验证成功",
+        "subtext": "请稍等，我们将带你进入下一个屏幕"
+      },
+      "error": "X1 Vault 验证失败"
+    },
+    "joystickTraining": {
+      "heading": "摇杆说明",
+      "subtext": "X1 Vault 提供4向摇杆进行屏幕导航",
+      "upTitle": "向上切换",
+      "rightTitle": "向右切换",
+      "downTitle": "向下切换",
+      "leftTitle": "向左切换",
+      "centerTitle": "点击摇杆中心以继续",
+      "centerSubtext": "X1 Vault 有一个中心按钮用于点击",
+      "footer": "按照设备上的说明操作",
+      "success": "摇杆说明完成",
+      "error": "摇杆说明失败"
+    },
+    "cardTraining": {
+      "heading": "卡片点击说明",
+      "title": "在 X1 Vault 下点击任意 X1 卡进行卡片点击测试",
+      "subtext": "你的卡片通过加密 NFC 与设备通信。确保保持点击直到听到哔声",
+      "error": "卡片点击失败"
+    },
+    "cardAuth": {
+      "heading": "卡片验证",
+      "title": "在 X1 Vault 下逐一点击 X1 卡，直到听到3声哔声",
+      "subtext": "在听到3声哔声后抬起你的卡"
+    },
+    "walletActionsDialogBox": {
+      "title": "在我们继续之前，让我们创建一个钱包。确保你有所有4张 X1 卡",
+      "subTitle": "以下教程仅用于指导你在设备上的操作。即使没有这些教程，你也可以在你的 Cypherock X1 上独立创建一个钱包",
+      "createWallet": {
+        "title": "创建一个新的钱包",
+        "list": [
+          "如果你购买了一台全新的 Cypherock X1 并希望设置一个新钱包",
+          "如果你购买了全新的 Cypherock X1 并想设置一个新的钱包"
+        ]
+      },
+      "importWallet": {
+        "title": "从种子短语导入你的钱包",
+        "list": [
+          "你希望将 Cypherock X1 作为你其他钱包的备份",
+          "你希望将你的资产从其他钱包转移到 Cypherock X1",
+          "你希望通过 Cypherock X1 管理和追踪你其他钱包的投资组合",
+          "你想将 Cypherock X1 用作其他钱包的备份",
+          "你想将资产从其他钱包转移到 Cypherock X1 ",
+          "你想通过 Cypherock X1 管理和跟踪其他钱包的资产组合"
+        ]
+      }
+    },
+    "success": {
+      "title": "恭喜",
+      "subtext": "Cypherock X1 现在可以使用了"
+    },
+    "appUpdate": {
+      "heading": "应用更新",
+      "dialogs": {
+        "checking": {
+          "heading": "应用更新",
+          "title": "请稍候，我们将检查 Cypherock CySync 更新"
+        },
+        "checkingFailed": {
+          "heading": "应用更新",
+          "title": "检查更新时发生错误",
+          "subtext": "出现问题，检查你的互联网连接并重试"
+        },
+        "confirmation": {
+          "heading": "应用更新",
+          "title": "你的 cySync 应用有一个新更新可用。将应用更新到 v${version} 以继续",
+          "subtext": "你的 X1 Vault 似乎与当前的 cySync 应用不兼容。更新桌面应用到 v${version} 以继续"
+        },
+        "downloading": {
+          "heading": "正在更新...",
+          "subtext": "请稍候，我们将更新你的 cySync 应用",
+          "version": "版本 ${version}"
+        },
+        "updateSuccessful": {
+          "heading": "cySync 应用已成功更新",
+          "subtext": "请稍候，我们将重新启动应用以应用最新更新",
+          "bubbleText": "如果应用没有自行重启，请手动再次启动"
+        },
+        "updateFailed": {
+          "heading": "cySync 更新到版本 ${version} 失败",
+          "subtext": "出现问题，请重试更新或联系支持",
+          "buttons": {
+            "retry": "重试"
+          }
+        },
+        "updateFailedFallback": {
+          "heading": "cySync 应用更新到版本 ${version} 失败",
+          "subtext": "从下面的链接下载并重新安装桌面应用",
+          "alertText": "在重新安装最新 cySync 应用前关闭此应用"
+        }
+      }
+    },
+    "deviceUpdate": {
+      "heading": "设备更新",
+      "version": "版本 ${version}",
+      "dialogs": {
+        "checking": {
+          "title": "请稍候，我们将检查 X1 Vault 更新"
+        },
+        "confirmation": {
+          "heading": "设备更新",
+          "title": "你的 X1 Vault 有一个新更新可用。更新设备到 v${version} 以继续",
+          "subtext": "按照设备上的说明操作"
+        },
+        "loading": {
+          "text": "请稍候，我们将检查 X1 Vault 更新"
+        },
+        "updating": {
+          "heading": "正在更新...",
+          "subtext": "请稍候，我们将更新你的 X1 Vault"
+        },
+        "updateSuccessful": {
+          "heading": "X1 Vault 成功更新",
+          "headingWithVersion": "X1 Vault 成功更新到 v${version}",
+          "subtext": "你的设备现在正在使用最新的固件"
+        },
+        "updateFailed": {
+          "heading": "固件更新失败",
+          "subtext": "重新连接设备以继续"
+        }
+      }
+    }
+  },
+  "appUpdateBar": {
+    "confirmation": "可用的更新版本为 cySync ${version}",
+    "downloading": "正在下载 cySync 版本 ${version}",
+    "error": "下载 cySync 更新时出错",
+    "successful": "cySync 更新已下载，当您关闭应用程序时将自动安装",
+    "buttons": {
+      "download": "下载",
+      "tryAgain": "重试",
+      "installUpdate": "安装更新"
+    }
+  },
+  "deviceUpdateBar": {
+    "message": "固件更新版本 ${version} 可用",
+    "button": "下载"
+  },
+  "betaNotificationBar": {
+    "message": "CySync v2.0.0 已可用！",
+    "button": "了解更多"
+  },
+  "topbar": {
+    "statusTexts": {
+      "connection": {
+        "connected": "已连接",
+        "disconnected": "已断开连接",
+        "error": "连接错误！"
+      },
+      "sync": {
+        "synchronized": "已同步",
+        "synchronizing": "正在同步...",
+        "error": "同步错误！",
+        "networkErrorTooltip": "网络错误"
+      }
+    },
+    "notification": {
+      "title": "交易",
+      "sendTransaction": "发送 ${amount} ${unit} ${type} 到 ${address}",
+      "sendTransactionMultiple": "发送 ${amount} ${unit} ${type} 到多个地址",
+      "receiveTransaction": "${amount} ${unit} ${type} 在账户 ${walletName}/${accountName} 中",
+      "noTransactions": {
+        "title": "全部处理完毕",
+        "subTitle": "没有新交易显示"
+      }
+    }
+  },
+  "sidebar": {
+    "portfolio": "Portfolio",
+    "wallets": "Wallets",
+    "sendCrypto": "发送加密货币",
+    "receiveCrypto": "接收加密货币",
+    "history": "历史记录",
+    "walletConnect": "Wallet Connect",
+    "settings": "设置",
+    "help": "帮助",
+    "buysell": "Buy",
+    "tooltip": {
+      "walletDeleted": "${walletName} 已从您的 Cypherock X1 Vault 中删除"
+    },
+    "cypherockCover": "Cypherock Cover",
+    "referAndEarn": "Refer & Earn",
+    "new": "新建"
+  },
+  "walletSync": {
+    "deletedOne": {
+      "title": "似乎您已经从X1 Vault删除了钱包${walletName}。您想在CySync上也删除它吗？"
+    },
+    "deletedMany": {
+      "title": "似乎您已经从X1 Vault删除了钱包。您想在CySync上也删除它们吗？",
+      "subTitle": "您可以选择保留哪些以及删除哪些"
+    },
+    "freshOneCreated": {
+      "title": "似乎您在创建同名新钱包时已从X1 Vault删除了旧钱包。您想在CySync上删除旧钱包吗？",
+      "subTitle": "您可以选择保留哪个和删除哪个",
+      "checkboxText": "不再显示此消息"
+    },
+    "buttons": {
+      "keepIt": "保留",
+      "keepAll": "全部保留",
+      "delete": "删除"
+    }
+  },
+  "graph": {
+    "totalBalance": "总余额",
+    "walletDropdown": {
+      "search": "搜索"
+    },
+    "timeRange": {
+      "day": "1D",
+      "week": "1W",
+      "month": "1M",
+      "year": "1Y"
+    }
+  },
+  "walletConnect": {
+    "uriTab": {
+      "title": "WalletConnect",
+      "subTitle": "输入 WalletConnect URI 以连接到 DApp",
+      "inputLabel": "输入连接 URI",
+      "placeholder": "粘贴 URI"
+    },
+    "accountSelectionTab": {
+      "title": "连接到 ${dappName} 界面",
+      "chooseWallet": "选择一个钱包",
+      "chooseAccount": "选择 ${assetName} 帐户",
+      "supportInfo": "这些区块链受支持，但使用前请添加其账户",
+      "notSupportedWarning": {
+        "title": "这些区块链不受支持"
+      }
+    },
+    "accountConnectedTab": {
+      "title": "已连接到 ${dappName} 界面",
+      "subTitle": "帐户",
+      "info": "您现在可以在网络浏览器上访问 ${dappName} DApp"
+    },
+    "common": {
+      "info": {
+        "title": "此应用将能够：",
+        "points": ["检查您的账户余额和活动", "请求交易审批", "请求交易批准"]
+      },
+      "error": {
+        "default": {
+          "title": "连接时发生错误",
+          "subtitle": "从 dApp 重试连接"
+        },
+        "unsupportedChains": {
+          "title": "${dappName} 请求连接到我们尚不支持的链",
+          "subtitle": "我们当前支持 ${chains}",
+          "message": "不支持的链: ${chains}"
+        }
+      },
+      "reject": {
+        "call": "用户拒绝"
+      }
+    }
+  },
+  "signMessage": {
+    "title": "签署消息",
+    "subTitle": "连接到以下账户",
+    "actions": {
+      "confirmDevice": "在设备上确认",
+      "verifyData": "验证数据",
+      "enterPassphrase": "输入密码短语",
+      "enterPin": "输入PIN码并轻触任意卡片",
+      "tapCard": "轻触任意卡片"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "tokenTable": {
+      "title": "代币",
+      "tableHeader": {
+        "token": "代币",
+        "amount": "数量",
+        "value": "价值"
+      }
+    },
+    "assetAllocation": {
+      "title": "资产配置",
+      "accountTitle": "账户",
+      "tableHeader": {
+        "asset": "资产",
+        "account": "账户",
+        "wallet": "钱包",
+        "price": "价格",
+        "balance": "余额",
+        "value": "价值",
+        "allocation": "配置"
+      }
+    },
+    "walletMissing": {
+      "text": "钱包缺失",
+      "subText": "创建一个新钱包或从种子短语导入以开始",
+      "subText2": "如果您已经在设备中创建了钱包，只需使用 cySync 同步它们"
+    },
+    "accountMissing": {
+      "text": "账户缺失",
+      "subText": "创建或导入一个账户以开始"
+    }
+  },
+  "wallet": {
+    "title": "Wallets",
+    "tableTitle": "账户",
+    "buttons": {
+      "less": "显示较少",
+      "more": "显示更多",
+      "hide": "隐藏代币",
+      "show": "显示代币"
+    },
+    "tableHeader": {
+      "account": "账户",
+      "syncStatus": "同步状态",
+      "balance": "余额",
+      "value": "价值"
+    },
+    "accountMissing": {
+      "text": "尚无账户",
+      "subText": "钱包中未找到硬币/账户"
+    },
+    "search": {
+      "placeholder": "搜索",
+      "text": "未找到结果",
+      "subText": "请尝试搜索其他关键词"
+    }
+  },
+  "deleteAccount": {
+    "title": "您确定要移除吗",
+    "subTitle": "您可以从${walletName}钱包页面再次添加该账户。请注意，这不会导致资产损失",
+    "tokenSubtitle": "您可以从${walletName}钱包页面再次添加该代币。请注意，这不会导致资产损失",
+    "buttons": {
+      "yes": "是",
+      "no": "否"
+    }
+  },
+  "errors": {
+    "deviceErrors": {
+      "CON_0100": {
+        "heading": "将 X1 Vault 连接到您的 PC 以继续"
+      },
+      "CON_0101": {
+        "heading": "将 X1 Vault 连接到您的 PC 以继续"
+      },
+      "CON_0102": {
+        "heading": "您的 X1 Vault 无法连接",
+        "subtext": "重新连接设备并重试"
+      },
+      "COM_0000": {
+        "heading": "您的 X1 Vault 处于安全模式",
+        "subtext": "更新设备以继续"
+      },
+      "COM_0104": {
+        "heading": "您的 X1 Vault 面临一些通信问题",
+        "subtext": "重新连接设备并重试"
+      },
+      "COM_0101": {
+        "heading": "您的 X1 Vault 面临一些通信问题",
+        "subtext": "重新连接设备并重试"
+      },
+      "COM_0102": {
+        "heading": "您的 X1 Vault 面临一些通信问题",
+        "subtext": "重新连接设备并重试"
+      },
+      "COM_0103": {
+        "heading": "您的 X1 Vault 面临一些通信问题",
+        "subtext": "重新连接设备并重试"
+      },
+      "COM_0100": {
+        "heading": "您的 X1 Vault 面临一些通信问题",
+        "subtext": "重新连接设备并重试"
+      },
+      "COM_0200": {
+        "heading": "您的 X1 Vault 不支持此操作",
+        "subtext": "将 cySync 应用和设备更新到最新版本"
+      },
+      "COM_0201": {
+        "heading": "您的 X1 Vault 与 cySync 应用不兼容",
+        "subtext": "将 cySync 应用和设备更新到最新版本"
+      },
+      "BTL_0000": {
+        "heading": "X1 Vault 上的操作失败",
+        "subtext": "重新连接设备并重试"
+      },
+      "BTL_0100": {
+        "heading": "您的 X1 Vault 不支持此固件",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0101": {
+        "heading": "您的 X1 Vault 不支持此固件",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0102": {
+        "heading": "您的 X1 Vault 不支持此固件",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0103": {
+        "heading": "您的 X1 Vault 的固件不是真实的",
+        "subtext": "通常发生在您尝试安装非 Cypherock 开发的固件时"
+      },
+      "BTL_0104": {
+        "heading": "您的 X1 Vault 无法更新到较低版本的固件",
+        "subtext": "该设备仅支持将固件更新到更高版本"
+      },
+      "BTL_0106": {
+        "heading": "X1 Vault 更新失败",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0107": {
+        "heading": "您的 X1 Vault 不支持此固件",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0108": {
+        "heading": "您的 X1 Vault 面临一些通信问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0109": {
+        "heading": "出现了一些问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "BTL_0105": {
+        "heading": "您的 X1 Vault 面临通信问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0000": {
+        "heading": "出现了一些问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0101": {
+        "heading": "您的 X1 Vault 目前正在忙",
+        "subtext": "在设备中导航到主菜单并重试"
+      },
+      "APP_0102": {
+        "heading": "您的 X1 Vault 中止了此操作",
+        "subtext": "您可以从上次中断的位置继续"
+      },
+      "APP_0103": {
+        "heading": "您的 X1 Vault 中止了此操作",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0200": {
+        "heading": "您的 X1 Vault 面临通信问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0201": {
+        "heading": "您的 X1 Vault 面临通信问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0202": {
+        "heading": "您的 X1 Vault 面临通信问题",
+        "subtext": "重新连接设备，重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0203": {
+        "heading": "设备上不存在该应用程序"
+      },
+      "APP_0204": {
+        "heading": "您的 X1 Vault 目前正在忙",
+        "subtext": "稍后重试，如果问题仍然存在，请重新连接设备。"
+      },
+      "APP_0205": {
+        "heading": "您的 X1 Vault 目前未正确设置",
+        "subtext": "按继续开始设置"
+      },
+      "APP_0300": {
+        "heading": "您已从 X1 Vault 删除了钱包 ${walletName}。 您是否还要从 cySync 应用中删除它？"
+      },
+      "APP_0301": {
+        "heading": "您的钱包 ${walletName} 在您的 X1 Vault 上配置不当",
+        "subtext": "从设备的主菜单中进入钱包 ${walletName} 以解决问题"
+      },
+      "APP_0206": {
+        "heading": "您的 X1 Vault 已超时",
+        "subtext": "在设备上导航到主菜单并重试"
+      },
+      "APP_0400": {
+        "heading": "未知的 X1 Card 错误",
+        "subtext": "重试或点击帮助寻找解决方案"
+      },
+      "APP_0501": {
+        "heading": "您在 X1 Vault 上取消了此操作"
+      },
+      "APP_0600": {
+        "heading": "您的 X1 Vault 面临通信问题",
+        "subtext": "重试或联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0700": {
+        "heading": "设备似乎被破坏。 立即联系 Cypherock 支持"
+      },
+      "APP_0701": {
+        "heading": "卡片似乎被破坏。 立即联系 Cypherock 支持"
+      },
+      "APP_0400_001": {
+        "heading": "未知的 X1 Card 错误",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_002": {
+        "heading": "您的 X1 Card 当前未与您的 X1 Vault 配对",
+        "subtext": "在执行操作之前，请通过设备主菜单中的设置为您的卡配对",
+        "deviceNavigationText": "主菜单 > 设置 > 卡配对"
+      },
+      "APP_0400_003": {
+        "heading": "您的 X1 Card 认证失败",
+        "subtext": "尝试使用另一张卡，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_004": {
+        "heading": "您的 X1 Card 出现故障",
+        "subtext": "重试或点击帮助寻找解决方案"
+      },
+      "APP_0400_005": {
+        "heading": "您的 X1 Card 面临一些通信问题",
+        "subtext": "重试或点击帮助寻找解决方案"
+      },
+      "APP_0400_006": {
+        "heading": "您点击了错误的 X1 Card",
+        "subtext": "确保您的卡片属于同一组"
+      },
+      "APP_0400_007": {
+        "heading": "您的 X1 Card 面临一些通信问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_008": {
+        "heading": "您点击了错误的 X1 Card",
+        "subtext": "请按正确的顺序点击卡片"
+      },
+      "APP_0400_009": {
+        "heading": "您的 X1 Card 面临一些通信问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_010": {
+        "heading": "您的 X1 Card 面临一些通信问题",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_011": {
+        "heading": "您的 X1 Card 与 X1 Vault 之间未同步",
+        "subtext": "在执行操作之前，通过设备主菜单中的钱包 ${walletName} 重新同步卡片"
+      },
+      "APP_0400_012": {
+        "heading": "您的 X1 Card 内存已满",
+        "subtext": "您可以删除钱包以添加新钱包或购买另一张 Cypherock X1"
+      },
+      "APP_0400_013": {
+        "heading": "您输入了错误的 PIN",
+        "subtext": "在卡片被锁定之前输入正确的 PIN"
+      },
+      "APP_0400_014": {
+        "heading": "您的 X1 Card 面临一些通信问题",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_015": {
+        "heading": "您的 X1 Card 需要与您的 X1 Vault 配对",
+        "subtext": "您可以从设备设置开始卡片配对，或者您可以使用不同的卡片组"
+      },
+      "APP_0400_016": {
+        "heading": "您的 X1 Card 面临一些通信问题",
+        "subtext": "联系 Cypherock 支持以获得帮助"
+      },
+      "APP_0400_017": {
+        "heading": "您的 X1 Vault 上的钱包 ${walletName} 目前被锁定",
+        "subtext": "解锁钱包后重试",
+        "deviceNavigationText": "主菜单 > ${walletName}"
+      },
+      "APP_0400_018": {
+        "heading": "您的 X1 Card 出现故障",
+        "subtext": "点击帮助寻找解决方案"
+      },
+      "APP_0400_019": {
+        "heading": "您的 X1 Card 出现故障",
+        "subtext": "重试或点击帮助寻找解决方案"
+      },
+      "APP_0400_000": {
+        "heading": "未知的 X1 Card 错误",
+        "subtext": "重试或点击帮助寻找解决方案"
+      },
+      "MGA_GL_0000": {
+        "heading": "X1 Vault 上的日志已禁用",
+        "subtext": "在 X1 Vault 设置中启用日志并重试"
+      },
+      "APP_0207": {
+        "heading": "无法在设备上建立会话"
+      }
+    },
+    "databaseError": {
+      "heading": "您的 cySync 应用遇到了一些内部问题",
+      "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+    },
+    "serverErrors": {
+      "SER_0000": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_0001": {
+        "heading": "请连接到互联网以继续"
+      },
+      "SER_1001": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1003": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1004": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1005": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1006": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1007": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1008": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1009": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1010": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1011": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1012": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1013": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1014": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1015": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1016": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1017": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1018": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1019": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1020": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1021": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1022": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1023": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1024": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1025": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1026": {
+        "heading": "您的 cySync 应用遇到了一些连接问题",
+        "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+      },
+      "SER_1027": {
+        "heading": "OTP 重发次数已达上限",
+        "subtext": "您已达到OTP重发的最大次数。请稍后再试，或联系 Cypherock 支持寻求帮助。"
+      },
+      "SER_1028": {
+        "heading": "电子邮件已存在",
+        "subtext": "使用此电子邮件地址的帐户已存在。请使用其他电子邮件地址或联系 Cypherock 支持寻求帮助。"
+      },
+      "SER_2000": {
+        "heading": "交易广播失败",
+        "subtext": "请重试或联系客服以获得帮助"
+      }
+    },
+    "binanceErrors": {
+      "BIN_0000": {
+        "heading": "系统错误",
+        "subtext": "重试，如果问题仍然存在，请联系Cypherock支持以获得帮助"
+      },
+      "BIN_0001": {
+        "heading": "系统繁忙",
+        "subtext": "重试，如果问题仍然存在，请联系Cypherock支持以获得帮助"
+      },
+      "BIN_0002": {
+        "heading": "参数无效",
+        "subtext": "重试，如果问题仍然存在，请联系Cypherock支持以获得帮助"
+      },
+      "BIN_0003": {
+        "heading": "缺少客户ID",
+        "subtext": "联系Cypherock支持以获得帮助"
+      },
+      "BIN_0004": {
+        "heading": "参数已禁用",
+        "subtext": "联系Cypherock支持以获得帮助"
+      },
+      "BIN_0005": {
+        "heading": "订单未找到",
+        "subtext": "重试，如果问题仍然存在，请联系Cypherock支持以获得帮助"
+      },
+      "BIN_0006": {
+        "heading": "不支持的订单类型",
+        "subtext": "联系Cypherock支持以获得帮助"
+      },
+      "BIN_0007": {
+        "heading": "参数未找到",
+        "subtext": "联系Cypherock支持以获得帮助"
+      },
+      "BIN_0008": {
+        "heading": "不支持的支付方式",
+        "subtext": "联系Cypherock支持以获得帮助"
+      }
+    },
+    "default": "发生了一些内部错误",
+    "serverCoinErrors": {
+      "default": {
+        "DEF_0000": {
+          "heading": "出现了一些问题",
+          "subtext": "重试，如果问题仍然存在，请联系 Cypherock 支持以获得帮助"
+        }
+      }
+    },
+    "videoPlaybackError": "无互联网连接。 请检查您的连接并"
+  },
+  "validation": {
+    "generic": {
+      "required": "此字段为必填项",
+      "englishOnly": "仅允许使用 ASCII 字符和英文文本"
+    },
+    "email": {
+      "invalid": "这不是一个有效的电子邮件"
+    },
+    "password": {
+      "mismatch": "密码不匹配",
+      "passwordFieldPrefix": "密码 ",
+      "confirmPasswordFieldPrefix": "确认密码 ",
+      "minLength": "必须至少有 8 个字符",
+      "containNumber": "必须包含至少 1 个数字",
+      "containSymbol": "必须包含至少 1 个符号",
+      "required": "是必需的",
+      "containUppercase": "必须包含至少 1 个大写字母",
+      "containLowercase": "必须包含至少 1 个小写字母"
+    }
+  },
+  "guidedFlows": {
+    "createWallet": {
+      "title": "创建新钱包",
+      "skipPinSetup": "Skip this step if you are not setting up a PIN",
+      "tabs": [
+        {
+          "asideTitle": "X1 Vault",
+          "pages": [
+            {
+              "title": "在您的X1 Vault主菜单中，点击\"创建钱包\""
+            },
+            {
+              "title": "在您的X1 Vault上点击\"生成新钱包\""
+            },
+            {
+              "title": "在您的X1 Vault上输入钱包名称",
+              "bulletList": ["最多允许15个字符", "可以是字母数字组合"],
+              "messageBoxList": [
+                {
+                  "info": "确保钱包名称与设备上的其他钱包名称唯一"
+                },
+                {
+                  "warning": "钱包名称一旦设置不可修改。请相应设置名称"
+                }
+              ]
+            },
+            {
+              "title": "在X1 Vault上确认钱包名称"
+            },
+            {
+              "title": "您是否要为您的钱包设置PIN码？",
+              "messageBoxList": [
+                {
+                  "warning": "PIN码一旦设置不可更改。如需更改PIN码，您将需要删除钱包并重新创建"
+                }
+              ]
+            },
+            {
+              "title": "在X1 Vault上设置PIN码",
+              "bulletList": ["使用4到8个字符", "PIN码可以是字母数字组合"],
+              "messageBoxList": [
+                {
+                  "warning": "确保备份您的PIN码。如果丢失，您将失去对资金的访问权限"
+                },
+                {
+                  "infoGreen": "您可以设置 Cypherock Cover PIN 码恢复服务来安全地恢复您的钱包 PIN 码 — 无需暴露您的助记词"
+                }
+              ]
+            },
+            {
+              "title": "在X1 Vault上确认输入的PIN码",
+              "messageBoxList": [
+                {
+                  "warning": "确保备份您的PIN码。如果丢失，您将失去对资金的访问权限"
+                },
+                {
+                  "infoGreen": "您可以设置 Cypherock Cover PIN 码恢复服务来安全地恢复您的钱包 PIN 码 — 无需暴露您的助记词"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "asideTitle": "同步X1卡片",
+          "pages": [
+            {
+              "title": "依次在X1 Vault下方轻触X1卡片",
+              "subtitle": "在听到哔声前不要抬起",
+              "messageBoxList": [
+                {
+                  "info": "确保您的X1卡片属于同一系列"
+                },
+                {
+                  "info": "确保以正确顺序轻触X1卡片"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "asideTitle": "确认",
+          "pages": [
+            {
+              "title": "恭喜，您的钱包已成功创建"
+            },
+            {
+              "title": "下次需要进行交易时，只需带上一张X1卡片和X1 Vault"
+            },
+            {
+              "title": "如果您失去了X1 Vault，可以单独购买新的X1 Vault并与旧的X1卡片一起使用"
+            },
+            {
+              "title": "重要提示",
+              "messageBoxList": [
+                {
+                  "warning": "如果您需要添加另一个钱包，需要一起获取所有4张卡片。如果您想将其他钱包导入到Cypherock X1，现在是避免未来麻烦的最佳时机"
+                }
+              ]
+            },
+            {
+              "title": "下一步，将您的X1卡片安全地放置在卡套中，并分散到不同的地方。一些可能的位置示例：",
+              "bulletList": [
+                "您家庭成员或朋友的家中",
+                "秘密藏身处",
+                "银行保险箱"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "importWallet": {
+      "title": "导入钱包",
+      "tabs": [
+        {
+          "asideTitle": "X1 Vault",
+          "pages": [
+            {
+              "title": "在您的X1 Vault主菜单中，点击\"创建钱包\""
+            },
+            {
+              "title": "在您的X1 Vault上点击\"从种子短语恢复\""
+            },
+            {
+              "title": "在您的X1 Vault上输入钱包名称",
+              "bulletList": ["最多允许15个字符", "可以是字母数字组合"],
+              "messageBoxList": [
+                {
+                  "info": "确保钱包名称与设备上的其他钱包名称唯一"
+                },
+                {
+                  "warning": "钱包名称一旦设置不可修改。请相应设置名称"
+                }
+              ]
+            },
+            {
+              "title": "在X1 Vault上确认钱包名称"
+            },
+            {
+              "title": "您是否要为您的钱包设置PIN码？",
+              "messageBoxList": [
+                {
+                  "warning": "PIN码一旦设置不可更改。如需更改PIN码，您将需要删除钱包并重新创建"
+                }
+              ]
+            },
+            {
+              "title": "在X1 Vault上设置PIN码",
+              "bulletList": ["使用4到8个字符", "PIN码可以是字母数字组合"],
+              "messageBoxList": [
+                {
+                  "warning": "确保备份您的PIN码。如果丢失，您将失去对资金的访问权限"
+                },
+                {
+                  "infoGreen": "您可以设置 Cypherock Cover PIN 码恢复服务来安全地恢复您的钱包 PIN 码 — 无需暴露您的助记词"
+                }
+              ]
+            },
+            {
+              "title": "在X1 Vault上确认输入的PIN码",
+              "messageBoxList": [
+                {
+                  "warning": "记住您的PIN码，如果丢失，您将失去对资金的访问权限。即使Cypherock也无法帮助您恢复资产"
+                },
+                {
+                  "infoGreen": "您可以设置 Cypherock Cover PIN 码恢复服务来安全地恢复您的钱包 PIN 码 — 无需暴露您的助记词"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "asideTitle": "同步X1卡片",
+          "pages": [
+            {
+              "title": "在X1 Vault上输入种子短语",
+              "messageBoxList": [
+                {
+                  "warning": "确保在设备上输入单词时没有拼写错误。像 \"west\" 和 \"nest\" 这样的单词在阅读时经常令人困惑，需要正确输入"
+                }
+              ]
+            },
+            {
+              "title": "验证您在X1 Vault上输入的种子短语",
+              "subtitle": "匹配每一个成功导入正确的钱包"
+            },
+            {
+              "title": "依次在X1 Vault下方轻触X1卡片",
+              "subtitle": "在听到哔声前不要抬起",
+              "messageBoxList": [
+                {
+                  "info": "确保您的X1卡片属于同一系列"
+                },
+                {
+                  "info": "确保以正确顺序轻触X1卡片"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "asideTitle": "确认",
+          "pages": [
+            {
+              "title": "恭喜，您的钱包已成功创建"
+            },
+            {
+              "title": "下次需要进行交易时，只需带上一张X1卡片和X1 Vault"
+            },
+            {
+              "title": "如果您失去了X1 Vault，可以单独购买新的X1 Vault并与旧的X1卡片一起使用"
+            },
+            {
+              "title": "重要提示",
+              "messageBoxList": [
+                {
+                  "warning": "如果您需要添加另一个钱包，需要一起获取所有4张卡片。如果您想将其他钱包导入到Cypherock X1，现在是避免未来麻烦的最佳时机"
+                }
+              ]
+            },
+            {
+              "title": "下一步，将您的X1卡片安全地放置在卡套中，并分散到不同的地方。一些可能的位置示例：",
+              "bulletList": [
+                "您家庭成员或朋友的家中",
+                "秘密藏身处",
+                "银行保险箱"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "finalMessage": {
+      "title": "要在钱包中添加币种和代币，您必须先添加一个账户。确保您手头有X1 Vault和X1卡片",
+      "buttons": {
+        "secondary": "跳过",
+        "primary": "添加账户"
+      }
+    },
+    "walletNotCreatedDialog": {
+      "title": "看起来您还没有创建钱包",
+      "subtitle": "要添加账户，您必须先创建钱包",
+      "buttons": {
+        "secondary": "我稍后再做",
+        "primary": "创建钱包"
+      }
+    },
+    "closeDialog": {
+      "title": "您确定要退出吗？",
+      "subtitle": "您可以随时点击钱包选项卡下的\"添加钱包\"来开始此指南",
+      "buttons": {
+        "secondary": "取消",
+        "primary": "退出"
+      }
+    }
+  },
+  "dialogs": {
+    "close": {
+      "title": "您确定要退出吗？"
+    },
+    "reset": {
+      "confim": {
+        "title": "您确定要重置cySync应用程序吗？",
+        "subTitle": "这将清除您cySync应用程序上的所有数据。请注意，这不会导致资产损失"
+      }
+    },
+    "releaseNote": {
+      "title": "发行说明"
+    },
+    "auth": {
+      "title": "请按照X1 Vault上的说明操作",
+      "email2fa": {
+        "title": "建议您输入电子邮件ID作为2FA以获得真实性结果",
+        "emailInput": "电子邮件"
+      },
+      "authX1Vault": {
+        "description": "您的设备正在进行身份验证",
+        "info": "在身份验证过程中请勿断开设备",
+        "steps": {
+          "confirm": "在设备上确认身份验证"
+        },
+        "success": "您的X1 Vault已成功通过身份验证",
+        "authenticating": {
+          "title": "请稍候，正在对您的X1 Vault进行身份验证",
+          "description": "在操作期间请勿断开您的X1 Vault"
+        }
+      },
+      "authX1Card": {
+        "description": "您的卡现在正在进行身份验证",
+        "info": "在卡进行身份验证时，请勿断开设备",
+        "steps": {
+          "confirm": "在设备上确认卡认证",
+          "tapCard": "在设备下方轻触任何卡"
+        },
+        "success": "您的X1 Card已成功通过身份验证"
+      }
+    },
+    "password": {
+      "input": {
+        "enterPassword": "输入密码",
+        "oldPassword": "旧密码",
+        "newPassword": "新密码",
+        "confirmPassword": "确认密码"
+      },
+      "error": {
+        "mismatchError": "密码不匹配",
+        "lengthError": "密码长度应大于8位",
+        "failedToSet": "设置密码失败"
+      },
+      "success": {
+        "change": "密码更改成功",
+        "set": "密码设置成功",
+        "remove": "密码删除成功"
+      },
+      "info": {
+        "constraints": "使用8个或更多字符，混合字母、数字和符号"
+      },
+      "confimPassword": {
+        "title": "确认密码以继续",
+        "subTitle": "提供密码以继续"
+      },
+      "createNewPassword": {
+        "title": "设置您的cySync密码",
+        "subTitle": "我们不会在服务器上存储您的密码"
+      }
+    },
+    "contactSupport": {
+      "form": {
+        "header": "联系支持",
+        "title": "我们如何帮助您？",
+        "description": "我们团队期待您的反馈",
+        "field": {
+          "email": {
+            "label": "电子邮件",
+            "placeholder": "您的电子邮件"
+          },
+          "category": {
+            "label": "类别",
+            "placeholder": "选择类别"
+          },
+          "description": {
+            "label": "描述",
+            "placeholder": "在此描述您的问题"
+          }
+        },
+        "checks": {
+          "attachAppLogs": "附加应用程序日志",
+          "attachDeviceLogs": "附加设备日志",
+          "confirmDevice": "请在设备上确认以继续",
+          "fetchingDeviceLogs": "从设备获取日志",
+          "attachedDeviceLogs": "设备日志已成功附加"
+        },
+        "errors": {
+          "connectDevice": "连接设备以附加设备日志",
+          "bootloaderMode": "设备处于启动加载程序模式"
+        }
+      },
+      "success": {
+        "formSubmit": "支持表格已成功提交"
+      }
+    },
+    "betaNotification": {
+      "title": "CySync 更新 v2.0.0",
+      "description": "我们对CySync应用程序进行了重大改革。\n新的CySync带来了您所有喜欢的功能和更多功能。\n请从<a href=\"https://cypherock.com/get-started\">https://cypherock.com/get-started</a>下载\n\n**重要**\n\n* 您不会失去资金\n* 更新后，您将需要再次导入您的账户\n* 除了安全更新外，CySync v1无需新更新\n"
+    },
+    "editAccount": {
+      "header": "编辑账户",
+      "accountSelection": {
+        "title": "选择要编辑的账户",
+        "subtitle": "选择您要编辑的账户",
+        "searchText": "搜索",
+        "accountPlaceholder": "选择账户",
+        "walletPlaceholder": "选择一个钱包"
+      },
+      "accountEdit": {
+        "title": "账户详情",
+        "subtitle": "编辑您的账户属性",
+        "input": {
+          "accountName": {
+            "title": "账户名称",
+            "subtitle": "账户描述"
+          },
+          "unit": {
+            "title": "单位",
+            "subtitle": "选择要使用的单位"
+          }
+        },
+        "buttons": {
+          "remove": "从投资组合中移除",
+          "apply": "应用"
+        },
+        "info": "这是一个${derivationSchemeName} xpub。在将其导入第三方钱包时，选择相同的衍生模式",
+        "advanced": "高级"
+      }
+    },
+    "inheritanceSyncPlans": {
+      "enterEmail": {
+        "title": "请输入与此计划关联的主要电子邮件",
+        "subTitle": "一个OTP将发送到此电子邮件",
+        "button": "验证"
+      },
+      "verifyEmail": {
+        "title": "OTP验证"
+      }
+    },
+    "inheritancePlanLogin": {
+      "walletAuth": {
+        "title": "请按照X1 Vault上的说明操作以验证所选钱包",
+        "subTitle": "正在验证钱包",
+        "actions": {
+          "confirm": "在设备上确认钱包认证",
+          "tapCard": "输入PIN并轻触任意一张卡"
+        }
+      },
+      "fetchData": {
+        "title": "请稍候，我们正在获取计划数据",
+        "subTitle": "请勿断开连接或关闭应用程序"
+      },
+      "verifyEmail": {
+        "title": "OTP验证"
+      }
+    },
+    "inheritanceEditExecutorMessage": {
+      "fetchData": {
+        "title": "请稍候，我们正在获取数据",
+        "subTitle": "请勿断开连接或关闭应用程序"
+      },
+      "editMessage": {
+        "title": "执行者消息",
+        "form": {
+          "messageField": {
+            "label": "消息",
+            "placeholder": "执行者消息"
+          }
+        },
+        "buttons": {
+          "exit": "不保存直接退出",
+          "save": "保存更改"
+        },
+        "loading": {
+          "title": "请稍候，我们正在更新数据",
+          "subtitle": "请勿断开连接或关闭应用程序"
+        }
+      },
+      "success": {
+        "title": "执行者消息已成功加密"
+      }
+    },
+    "inheritanceEditReminderTime": {
+      "fetchData": {
+        "title": "请稍候，我们正在获取数据",
+        "subTitle": "请勿断开连接或关闭应用程序"
+      },
+      "reminderSetup": {
+        "title": "提醒设置",
+        "reminderInfo": {
+          "subtitle": "什么是提醒时间？",
+          "subtext": "提醒时间是您将从Cypherock收到确认电子邮件以验证您继续健康的时间间隔。如果在初始电子邮件后的两个月内未收到回复，继承过程将开始，您的提名者将收到来自Cypherock的恢复说明电子邮件"
+        },
+        "form": {
+          "reminderField": {
+            "label": "设置提醒时间间隔",
+            "month": "月",
+            "months": "个月"
+          }
+        },
+        "currentReminder": "当前提醒设置为${month}",
+        "loading": {
+          "title": "请稍候，我们正在更新数据",
+          "subtitle": "请勿断开连接或关闭应用程序"
+        }
+      },
+      "success": {
+        "title": "提醒持续时间已成功更新"
+      }
+    },
+    "inheritanceEditUserDetails": {
+      "editDetails": {
+        "title": "编辑${userType}详情",
+        "userTypes": {
+          "owner": "所有者",
+          "nominee": "提名者",
+          "executor": "执行者"
+        },
+        "buttons": {
+          "verifyEmail": "验证电子邮件"
+        }
+      },
+      "verifyOtp": {
+        "loading": {
+          "title": "请稍候，我们正在更新数据",
+          "subtext": "请勿断开连接或关闭应用程序"
+        }
+      },
+      "success": {
+        "title": "${userType}详情已成功更新"
+      }
+    },
+    "inheritancePinRecovery": {
+      "title": "PIN恢复",
+      "sync": {
+        "name": "正在同步",
+        "walletAuth": {
+          "title": "请按照X1 Vault上的说明操作以验证所选钱包",
+          "subTitle": "正在验证钱包",
+          "actions": {
+            "confirmAuth": "在设备上确认钱包认证",
+            "tapCard": "轻触任意一张卡"
+          },
+          "messageBox": {
+            "warning": "在听到两声蜂鸣后抬起卡片"
+          }
+        },
+        "verifyOtp": {
+          "title": "OTP验证"
+        },
+        "fetch": {
+          "title": "请稍候，我们正在获取加密的PIN",
+          "subTitle": "请勿断开连接或关闭应用程序"
+        }
+      },
+      "decryptPin": {
+        "name": "解密",
+        "title": "请按照X1 Vault上的说明进行操作",
+        "actions": {
+          "confirmOnDevice": "在设备上确认解密",
+          "tapCard": "轻触任意一张卡"
+        },
+        "messageBox": {
+          "warning": "PIN将由卡片解密"
+        },
+        "error": {
+          "title": "PIN解密失败",
+          "subTitle": "PIN解密失败。在卡中未找到钱包${wallet}"
+        }
+      },
+      "viewPin": {
+        "name": "查看PIN",
+        "title": "请按照X1 Vault上的说明进行操作",
+        "subTitle": "钱包的PIN",
+        "actions": {
+          "viewDevice": "在设备上查看PIN并确认"
+        }
+      },
+      "success": {
+        "name": "确认",
+        "title": "恭喜，PIN恢复已经完成"
+      }
+    },
+    "inheritanceEditEncryptedMessage": {
+      "confirmation": {
+        "title": "您确定要编辑加密的提名者消息吗？",
+        "subTitle": "编辑后，您需要设备和至少一张卡来重新加密消息"
+      },
+      "syncing": {
+        "title": "请稍候，我们正在获取数据",
+        "subTitle": "请勿断开连接或关闭应用程序"
+      },
+      "decryption": {
+        "wallet": {
+          "title": "请按照X1 Vault上的说明进行操作",
+          "actions": {
+            "confirm": "在设备上确认解密",
+            "tapCard": "轻触任何卡"
+          },
+          "messageBox": {
+            "warning": "消息将由X1卡解密"
+          },
+          "decryption": {
+            "title": "请稍候，我们正在解密数据",
+            "subTitle": "请勿断开连接或关闭应用程序"
+          }
+        }
+      },
+      "editMessage": {
+        "title": "提名者消息",
+        "subTitle": "提名者消息将进行端到端加密",
+        "form": {
+          "cardLocationField": {
+            "label": "卡位置及口令",
+            "placeholder": "写下卡片的位置",
+            "tooltip": "写下供提名者获取的另一张卡的位置。提名者只有在获取另一张卡后才能恢复加密资产。请记住，这张卡应该与您可能提供给提名者的卡不同。\n您也可以在此消息中包括口令"
+          },
+          "personalMessageField": {
+            "label": "个人消息",
+            "placeholder": "写下您的消息",
+            "tooltip": "这可以包括您对提名者的意愿/消息以及其他您希望提名者知道的重要信息，比如您的加密货币交易账户详细信息、您拥有的加密货币等。"
+          }
+        },
+        "messageBox": {
+          "warning": "确保您清楚地描述卡片的位置以供提名者了解"
+        }
+      },
+      "confirmMessage": {
+        "title": "请按照X1 Vault上的说明操作以验证提名者消息",
+        "subTitle": "您可以在下一步中加密该消息",
+        "actions": {
+          "confirmOnDevice": "在设备上确认",
+          "verifyLocation": "在您的设备上验证卡片位置"
+        },
+        "messageBox": {
+          "danger": "请阅读完整文本，并验证设备上显示的消息与您在cySync中输入的信息相同"
+        }
+      },
+      "encryption": {
+        "title": "请按照X1 Vault上的说明操作以加密提名者消息",
+        "subTitle": "在听到两声蜂鸣后抬起卡片",
+        "tooltip": "",
+        "actions": {
+          "enterPinAndTap": "输入PIN并轻触任意一张卡"
+        },
+        "messageBox": {
+          "warning": "提名者消息将由卡加密"
+        },
+        "syncing": {
+          "title": "请稍候，我们正在服务器上保存加密数据",
+          "subTitle": "请勿断开连接或关闭应用程序"
+        }
+      },
+      "success": {
+        "title": "提名者消息已成功更新"
+      }
+    },
+    "inheritanceEstateRecovery": {
+      "title": "资产恢复",
+      "instructions": {
+        "name": "清除设备数据",
+        "dialogs": {
+          "settings": {
+            "title": "从X1 Vault的主菜单中，点击“设置”"
+          },
+          "clearData": {
+            "title": "在X1 Vault上点击“清除设备数据”"
+          },
+          "confirmClearData": {
+            "title": "在X1 Vault上确认“清除设备数据”"
+          },
+          "tapCards": {
+            "title": "在X1 Vault下方轻触任意2张旧X1卡",
+            "subTitle": "请勿抬起，直到听到蜂鸣声",
+            "messageBoxList": [
+              {
+                "warning": "轻触您在初始Cypherock设置过程中使用的卡，而不是钱包持有人给予的卡"
+              },
+              {
+                "warning": "此过程后设备将重启"
+              }
+            ]
+          }
+        }
+      },
+      "wallet": {
+        "name": "钱包",
+        "title": "请按照X1 Vault上的说明操作以验证所选钱包",
+        "subTitle": "正在验证钱包",
+        "actions": {
+          "confirm": "在设备上确认钱包认证",
+          "tapCard": "轻触您作为提名者收到的卡"
+        },
+        "messageBox": {
+          "warning": "请勿抬起，直到听到两声蜂鸣"
+        },
+        "verification": {
+          "title": "OTP验证"
+        },
+        "syncing": {
+          "title": "请稍候，我们正在获取数据",
+          "subTitle": "请勿断开连接或关闭应用程序"
+        }
+      },
+      "decryption": {
+        "name": "解密",
+        "device": {
+          "title": "请按照X1 Vault上的说明进行操作",
+          "subTitle": "请勿抬起卡片，直到听到蜂鸣声",
+          "actions": {
+            "confirm": "在设备上确认解密",
+            "tapCard": "轻触您作为提名者收到的卡片"
+          },
+          "messageBox": {
+            "warning": "消息将由您作为提名者收到的卡片解密"
+          }
+        },
+        "error": {
+          "title": "解密消息",
+          "message": "更新不成功。在卡中未找到钱包ABC"
+        }
+      },
+      "viewPin": {
+        "name": "查看PIN",
+        "title": "请按照X1 Vault上的说明进行操作",
+        "subTitle": "钱包的PIN",
+        "actions": {
+          "view": "查看并复制设备上显示的PIN，然后确认"
+        },
+        "messageBox": {
+          "warning": "您将需要此PIN来访问此钱包中的加密资产。确保您不要忘记它"
+        }
+      },
+      "viewMessage": {
+        "name": "查看消息",
+        "title": "来自${name}的消息",
+        "tooltip": "这些消息是钱包持有人为您撰写的。其中包含有关如何恢复存储在Cypherock X1上的加密资产的重要信息。\n注意-确保您将这些消息保密并安全保管。",
+        "form": {
+          "cardLocationField": {
+            "label": "卡片位置",
+            "placeholder": "写下卡片的位置",
+            "tooltip": "这是钱包持有人为您撰写的另一张卡的位置。只有获取另一张卡后，您才能恢复加密资产"
+          },
+          "personalMessageField": {
+            "label": "个人消息",
+            "placeholder": "写下您的消息",
+            "tooltip": "这是钱包持有人为您撰写的个人信息"
+          },
+          "checkBox": {
+            "label": "我已阅读并复制上述消息"
+          }
+        }
+      },
+      "confirmation": {
+        "name": "确认",
+        "success": {
+          "title": "恭喜，您刚刚解密了来自${name}的消息",
+          "subTitle": "观看视频以了解下一步"
+        }
+      }
+    },
+    "swapDialog": {
+      "provider": "Provider",
+      "swapId": "Swap Id",
+      "status": "Status",
+      "fromTitle": "From",
+      "fromWallet": "Wallet",
+      "fromAccount": "Account",
+      "fromAsset": "Asset",
+      "fromAmount": "Amount Sent",
+      "fromSender": "Sender",
+      "toTitle": "To",
+      "toWallet": "Wallet",
+      "toAccount": "Account",
+      "toAsset": "Asset",
+      "toAmount": "Amount Received",
+      "toReceiver": "Receiver"
+    }
+  },
+  "toggle": {
+    "on": "开",
+    "off": "关"
+  },
+  "snackbar": {
+    "copiedToClipboard": "已复制到剪贴板",
+    "accountUpdated": "账户更新成功",
+    "downloadCSV": "交易历史已导出"
+  },
+  "settings": {
+    "tabs": {
+      "general": {
+        "title": "常规",
+        "item": {
+          "syncMobile": {
+            "title": "同步 CySync 移动应用",
+            "description": "通过二维码将您的账户与 CySync 移动应用同步"
+          },
+          "editAccount": {
+            "title": "编辑账户",
+            "description": "编辑账户名称、首选货币或将其从投资组合中删除"
+          },
+          "toggleWalletOnPortfolio": {
+            "title": "在投资组合中显示/隐藏钱包",
+            "description": "您可以在此禁用特定钱包，它将不会显示在投资组合页面上"
+          },
+          "currency": {
+            "title": "首选货币",
+            "description": "选择显示在余额和操作旁边的货币"
+          },
+          "language": {
+            "title": "显示语言",
+            "description": "设置 CySync 应用的语言"
+          },
+          "region": {
+            "title": "地区",
+            "description": "选择您的地区以更新日期和时间格式"
+          }
+        }
+      },
+      "app": {
+        "title": "应用设置",
+        "item": {
+          "password": {
+            "title": "密码",
+            "description": "更改或打开/关闭 CySync 应用的密码"
+          },
+          "anayticsAndBugReport": {
+            "title": "分析与错误报告",
+            "description": "启用分析和错误报告以帮助 Cypherock 改善用户体验并更快解决问题。这包括点击、页面访问、重定向、操作（发送、接收、锁定等）、页面滚动结束、（卸载）和应用版本、账户数量、加密资产和操作、会话持续时间、Cypherock 设备类型和固件"
+          },
+          "reset": {
+            "title": "重置 CySync",
+            "description": "擦除存储在您 PC 上的所有 CySync 数据，包括您的账户、交易历史和设置。请注意，这不会导致资产丢失"
+          },
+          "update": {
+            "title": "CySync 更新",
+            "description": "当有更新可用时自动下载 CySync 更新"
+          },
+          "usb": {
+            "title": "USB 诊断",
+            "description": "故障排除设备的 USB 连接"
+          }
+        }
+      },
+      "device": {
+        "title": "设备设置",
+        "item": {
+          "x1VaultAuth": {
+            "title": "X1 Vault 身份验证",
+            "description": "验证您的设备"
+          },
+          "x1CardAuth": {
+            "title": "X1 Card 身份验证",
+            "description": "验证您的卡"
+          },
+          "transferWallet": {
+            "title": "转移钱包",
+            "description": "如果您曾经拥有 Cypherock X1，并且想要在丢失的情况下通过您的卡转移钱包，或任何其他原因"
+          }
+        }
+      },
+      "about": {
+        "title": "关于",
+        "item": {
+          "cySyncVersion": {
+            "title": "cySync 版本",
+            "description": "版本 ${version}"
+          },
+          "termsOfUse": {
+            "title": "使用条款",
+            "description": "使用 CySync 即表示您同意我们的使用条款"
+          },
+          "privacyPolicy": {
+            "title": "隐私政策",
+            "description": "查看我们的隐私政策以了解我们收集哪些个人数据、原因及如何使用"
+          },
+          "appTutorials": {
+            "title": "应用教程",
+            "description": "观看关于如何使用 cySync 和 Cypherock X1 的分步视频指南"
+          }
+        }
+      }
+    }
+  },
+  "onramp": {
+    "title": "购买加密货币",
+    "buy": {
+      "title": "购买",
+      "selectCurrency": {
+        "selectFiat": {
+          "label": "您将支付",
+          "placeholder": "选择法定货币",
+          "searchText": "搜索法定货币"
+        },
+        "selectCrypto": {
+          "label": "您将获得",
+          "placeholder": "选择加密货币",
+          "searchText": "搜索加密货币"
+        },
+        "amount": {
+          "label": "金额",
+          "tooltip": "显示的价格包含交易费",
+          "error": "输入金额无效",
+          "limitError": "输入金额应介于 ${min} 和 ${max} 之间",
+          "noMethodsError": "当前没有可用的支付方式适用于该币对。请尝试不同的币对"
+        }
+      },
+      "selectWallet": {
+        "title": "购买",
+        "subtitle": "选择一个钱包和账户以记入${currencyCode}",
+        "selectWallet": {
+          "placeholder": "选择一个钱包",
+          "searchText": "搜索钱包"
+        },
+        "selectAccount": {
+          "placeholder": "选择账户",
+          "searchText": "搜索账户"
+        },
+        "selectPaymentMethod": {
+          "label": "选择支付方式",
+          "placeholder": "支付方式",
+          "searchText": "搜索支付方式"
+        },
+        "messageBox": {
+          "danger": "未找到账户"
+        }
+      },
+      "redirectOrder": {
+        "title": "订单",
+        "subtitle": "在您的浏览器中完成订单",
+        "info": {
+          "accountFieldLabel": "账户",
+          "amountFieldLabel": "您将支付",
+          "conversionFieldLabel": "您将获得"
+        },
+        "messageBox": {
+          "info": "未打开浏览器？",
+          "action": "点击这里"
+        }
+      }
+    }
+  },
+  "labels": {
+    "email": "电子邮件",
+    "required": "必需"
+  },
+  "dashboard": {
+    "wallet": {
+      "renewNow": "立即续订",
+      "buyNow": "立即购买",
+      "created": "创建于",
+      "expiredOn": "到期于",
+      "expiresIn": "到期于",
+      "expiry": "到期日",
+      "expiring": "即将到期",
+      "expired": "已过期",
+      "pending": "待处理",
+      "silver": "银色",
+      "gold": "金色",
+      "hours": "小时",
+      "setupCover": "设置 Cypherock Cover"
+    }
+  },
+  "otp": {
+    "title": "输入OTP",
+    "wrongOtpTitle": "错误的OTP",
+    "successRedirectTitle": "请稍候，我们正在重定向...",
+    "triesRemaining": "剩余尝试次数：${retries}",
+    "infoTexts": ["一封邮件已发送至 **${email}**", "请输入邮件中收到的代码"],
+    "noRetries": {
+      "title": "您的尝试次数为0",
+      "subTitle": "请退出流程并重新开始"
+    },
+    "buttons": {
+      "resendWithTimeout": "有效时长为${timeout}秒"
+    }
+  },
+  "inheritanceSilverPlanPurchase": {
+    "title": "Silver Plan 设置",
+    "instructions": {
+      "heading": "说明",
+      "ensure": {
+        "title": "继续之前确保以下事项",
+        "instructions": [
+          "确保您有 15-30 分钟来设置它",
+          "您在一个安全的环境中",
+          "您需要有一个设备和一张卡片方便进行设置"
+        ]
+      },
+      "video": {
+        "title": "在您进一步操作之前观看教程视频"
+      }
+    },
+    "wallet": {
+      "heading": "钱包",
+      "selectWallet": {
+        "title": "选择您要在此计划中覆盖的钱包",
+        "subTitle": "要设置额外的钱包，稍后可以创建单独的计划",
+        "tooltips": {
+          "alreadyActive": "此钱包的计划已设定",
+          "noPin": "这个钱包没有设置 PIN，创建一个新钱包或选择一个已设置 PIN 的不同钱包",
+          "isDeleted": "在连接的设备中找不到钱包，添加此钱包或选择其他钱包"
+        }
+      },
+      "walletAuth": {
+        "title": "按照 X1 Vault 上的说明验证所选钱包",
+        "subTitle": "正在验证钱包 ",
+        "actions": {
+          "confirm": "在设备上确认钱包验证",
+          "tapCard": "输入 PIN 并点击任意一张卡"
+        },
+        "messageBox": {
+          "warning": "在听到三声哔声后拿起您的卡片"
+        }
+      }
+    },
+    "email": {
+      "heading": "所有者",
+      "userDetails": {
+        "title": "您的详细信息",
+        "subTitle": "所有字段都是必填的",
+        "buttons": {
+          "sendOTP": "发送 OTP"
+        }
+      }
+    },
+    "encryption": {
+      "heading": "加密",
+      "device": {
+        "title": "按照 X1 Vault 上的说明加密 PIN",
+        "subTitle": "在听到两声哔声后拿起您的卡片",
+        "tooltip": "在 X1 设备下面轻触任意一张 X1 卡片以加密消息，不要移除卡片直至您听到两声哔声",
+        "actions": {
+          "confirm": "在设备上确认加密",
+          "tapCard": "输入 PIN 并点击任意一张卡"
+        },
+        "messageBox": {
+          "warning": "PIN 将由 X1 卡加密"
+        }
+      },
+      "loading": {
+        "title": "请稍候，我们正在将加密数据保存到服务器",
+        "subTitle": "不要断开连接或关闭应用程序"
+      },
+      "success": {
+        "title": "PIN 已成功加密并保存",
+        "subTitle": "要完成您的 Silver Plan 设置，您现在可以继续计划购买"
+      }
+    },
+    "checkout": {
+      "heading": "结账",
+      "payment": {
+        "title": "完成您的付款",
+        "subtext": "您需要在 Cypherock 网站上购买计划，然后在下面的“优惠券代码”部分中应用生成的优惠券代码以完成您的购买"
+      },
+      "success": {
+        "title": "谢谢您！",
+        "subtext": "您的 Silver Plan 现已激活"
+      }
+    }
+  },
+  "inheritance": {
+    "title": "Cypherock Cover",
+    "plans": {
+      "silver": {
+        "title": "银",
+        "description": "保护您的钱包PIN码，若忘记可轻松恢复，确保持续访问您的加密资产"
+      },
+      "gold": {
+        "title": "金",
+        "description": "确保您的加密资产能够毫无困难地被心爱的人继承，绕过复杂的法律限制，实现顺畅转移"
+      }
+    },
+    "choosePlan": {
+      "title": "选择计划",
+      "plans": {
+        "buttonText": "选择",
+        "popularTagText": "最受欢迎",
+        "features": ["无需KYC", "多链支持", "PIN恢复", "遗产恢复", "密码恢复"]
+      }
+    },
+    "homePage": {
+      "headers": {
+        "owner": {
+          "title": "所有者",
+          "subtitle": "为您的钱包设置恢复"
+        },
+        "nominee": {
+          "title": "被提名人",
+          "subtitle": "您是以下钱包的被提名人"
+        }
+      },
+      "setup": {
+        "setupCover": {
+          "title": "设置Cypherock Cover",
+          "subTitle": "保护您的加密资产，确保在意外情况下能够顺利转移给您的受益人"
+        },
+        "syncFromMail": {
+          "title": "从电子邮件同步",
+          "subTitle": "如果您已经是Cypherock Cover计划的一部分，无论是计划所有者还是受益人"
+        },
+        "learnMore": {
+          "title": "什么是Cypherock Cover？",
+          "subTitle": "了解Cypherock Cover如何保护您的加密资产，并确保它们顺畅地转移给您的亲人"
+        }
+      }
+    },
+    "planDetails": {
+      "walletDetails": {
+        "createdOn": "创建于",
+        "expiringOn": "到期于",
+        "reminderPeriodField": {
+          "label": "提醒周期",
+          "input": "每${month}个月",
+          "inputPlural": "每${month}个月"
+        }
+      },
+      "ownerDetails": {
+        "title": "所有者详细信息",
+        "form": {
+          "userNameField": {
+            "label": "名称"
+          },
+          "primaryEmailField": {
+            "label": "主要电子邮件"
+          },
+          "secondaryEmailField": {
+            "label": "次要电子邮件"
+          }
+        }
+      },
+      "nomineeDetails": {
+        "title": "被提名人 #${number}",
+        "form": {
+          "nomineeNameField": {
+            "label": "名称"
+          },
+          "primaryEmailField": {
+            "label": "主要电子邮件"
+          },
+          "secondaryEmailField": {
+            "label": "次要电子邮件"
+          },
+          "encryptedMessage": {
+            "label": "加密消息"
+          }
+        }
+      },
+      "executorDetails": {
+        "title": "执行者",
+        "form": {
+          "nomineeNameField": {
+            "label": "名称"
+          },
+          "primaryEmailField": {
+            "label": "主要电子邮件"
+          },
+          "secondaryEmailField": {
+            "label": "次要电子邮件"
+          },
+          "executorMessage": {
+            "label": "执行者消息"
+          },
+          "assignTo": {
+            "label": "分配给"
+          }
+        }
+      }
+    },
+    "buttons": {
+      "syncFromEmail": "从邮件同步",
+      "recoverPin": "恢复PIN",
+      "renewPlan": "续订计划",
+      "unlock": "解锁",
+      "upgradePlan": "升级计划"
+    },
+    "termsOfService": {
+      "title": "使用条款",
+      "termsOfService": "服务条款",
+      "privacyPolicy": "隐私政策",
+      "checkBoxLabel": "我已阅读并同意服务条款和隐私政策"
+    },
+    "dialog": {
+      "userDetails": {
+        "form": {
+          "name": "名称",
+          "emailField": {
+            "label": "主要电子邮件",
+            "tooltip": "输入您想接收所有提醒电子邮件的邮箱"
+          },
+          "alternateEmail": "备用电子邮件"
+        },
+        "error": {
+          "sameEmail": "备用电子邮件不能与主要电子邮件相同"
+        }
+      },
+      "verifyOTP": {
+        "primaryEmailOTP": {
+          "title": "主要电子邮件的OTP验证"
+        },
+        "alternateEmailOTP": {
+          "title": "备用电子邮件的OTP验证"
+        }
+      },
+      "payment": {
+        "heading": "在Cypherock网站购买计划",
+        "subtext": "您需要在Cypherock网站上购买计划，然后在下面的'优惠券代码'部分应用生成的优惠券代码以完成购买",
+        "form": {
+          "promoField": {
+            "label": "促销代码/优惠券",
+            "placeholder": "输入代码"
+          }
+        },
+        "couponInput": {
+          "appliedButtonText": "已应用优惠券：",
+          "applyButtonText": "应用"
+        },
+        "noOfYear": "年份数量",
+        "total": "总计",
+        "year": "年",
+        "error": {
+          "errorHeading": "无效的优惠券代码",
+          "subtext": "请尝试不同的优惠券代码",
+          "differentPlanSubtext": "此优惠券代码适用于不同的计划"
+        }
+      }
+    },
+    "banner": {
+      "title": "用Cypherock Cover保护您的加密遗产 - 确保您的资产到达您的亲人手中",
+      "buttons": {
+        "knowMore": "了解更多"
+      }
+    }
+  },
+  "inheritanceGoldPlanPurchase": {
+    "title": "黄金计划设置",
+    "instructions": {
+      "heading": "说明",
+      "ensure": {
+        "title": "继续之前请确保以下事项",
+        "instructions": [
+          "确保您有 15-30 分钟来设置",
+          "您在安全的环境中",
+          "您需备有一台设备和一张卡以进行设置"
+        ]
+      },
+      "video": {
+        "title": "在您继续之前观看教程视频",
+        "subTitle": "视频将帮助您做出正确的决定"
+      }
+    },
+    "wallet": {
+      "heading": "钱包",
+      "selectWallet": {
+        "title": "选择您想包含在此计划中的钱包",
+        "subTitle": "要设置额外的钱包，可以稍后创建单独的计划",
+        "tooltips": {
+          "alreadyActive": "此钱包的计划已设置",
+          "noPin": "此钱包没有设置 PIN，请创建新钱包或选择已设置 PIN 的其他钱包",
+          "isDeleted": "在连接的设备中找不到钱包，请添加此钱包或选择其他钱包"
+        }
+      },
+      "walletAuth": {
+        "heading": "钱包身份验证",
+        "title": "按照 X1 Vault 上的指示验证所选钱包",
+        "subTitle": "正在验证钱包",
+        "actions": {
+          "confirmOnDevice": "在设备上确认钱包验证",
+          "tapCard": "输入 PIN 并点击任意一张卡"
+        },
+        "messageBox": {
+          "warning": "在听到 3 次蜂鸣声后抬起您的卡"
+        },
+        "error": {
+          "title": "钱包验证失败",
+          "subtext": "我们无法验证所选钱包",
+          "messageBox": {
+            "warning": "通常情况下发生这种情况是因为 Cysync 和设备中的钱包不同步。请同步 Cysync 和设备之间的钱包或选择其他钱包"
+          }
+        }
+      }
+    },
+    "email": {
+      "heading": "所有者",
+      "userDetails": {
+        "title": "您的详细信息",
+        "form": {
+          "name": "姓名",
+          "emailField": {
+            "label": "主电子邮箱",
+            "tooltip": "输入您希望接收所有提醒邮件的电子邮件"
+          },
+          "alternateEmail": "备用电子邮箱"
+        },
+        "buttons": {
+          "sendOTP": "发送 OTP"
+        }
+      },
+      "primaryEmailOTP": {
+        "title": "主电子邮箱的 OTP 验证"
+      },
+      "alternateEmailOTP": {
+        "title": "备用电子邮箱的 OTP 验证"
+      }
+    },
+    "nomineeAndExecutor": {
+      "heading": "被指定人和执行者",
+      "select": {
+        "title": "您想要多少被指定人？",
+        "subtitle": "此遗嘱中您最多可以有 2 名被指定人",
+        "tooltip": "如果您选择两名被指定人，那么第二名被指定人将在第一名被指定人收到恢复电子邮件后三个月收到。\n注意 - 两名被指定人将收到相同的恢复电子邮件和您在 CySync 应用上写的相同消息",
+        "options": {
+          "descOne": "选择如果您仅想要一名被指定人",
+          "descTwo": "选择如果您希望有两名被指定人"
+        }
+      },
+      "nomineeDetails": {
+        "first": {
+          "title": "添加第一名被指定人",
+          "warning": "确保您给被指定人一张卡",
+          "tooltip": "您的被指定人将在此电子邮件上收到恢复说明"
+        },
+        "second": {
+          "title": "添加第二名被指定人",
+          "warning": "确保您给第二名被指定人一张卡"
+        },
+        "confirm": {
+          "title": "您想要验证被指定人的电子邮件吗？",
+          "subtext": "会向提供的电子邮件发送 OTP。如果您不想告知被指定人关于此计划，您可以跳过电子邮件的验证。",
+          "warning": "如果不验证被指定人的电子邮件，Cypherock 电子邮件可能会进入垃圾邮件文件夹"
+        }
+      },
+      "executor": {
+        "select": {
+          "title": "您想要为此遗嘱指定执行者吗？",
+          "subtext": "执行者将帮助被指定人恢复资金",
+          "tooltip": "执行者/帮助者可以是您信任的人，他们没有任何经济利益，但可以被指定为被指定人的帮助者以进行资金恢复。\n执行者将在与被指定人相同的时间收到电子邮件。",
+          "options": {
+            "one": {
+              "yes": "是",
+              "desc": "您信任的技术精通的人"
+            },
+            "two": {
+              "no": "否",
+              "desc": "如果您的被指定人是技术精通的"
+            }
+          }
+        },
+        "executorDetails": {
+          "title": "添加执行者",
+          "tooltip": "执行者将在此电子邮件上收到帮助被指定人的说明",
+          "radio": {
+            "label": "选择要与执行者链接的被指定人",
+            "tooltip": "选择要与执行者链接的被指定人。如果您选择被指定人 1，则执行者将与被指定人 1 同时收到您写的电子邮件。\n\n如果您选择被指定人 2，则执行者将在被指定人 2 收到您的电子邮件的同时收到他们的电子邮件，亦即，在被指定人 1 之后的 3 个月。",
+            "options": {
+              "labelPrefix": "被指定人 "
+            },
+            "messageBox": {
+              "warning": "执行者将在与被指定人相同的时间收到您写的电子邮件"
+            }
+          }
+        }
+      }
+    },
+    "message": {
+      "heading": "信息",
+      "tutorial": {
+        "title": "在您推进之前观看教程视频",
+        "subtext": "如何写遗嘱信息"
+      },
+      "nominee": {
+        "title": "为被指定人撰写遗嘱信息",
+        "subtitle": "被指定人的信息将进行端到端加密",
+        "tooltip": "端到端加密使您的信息仅在您和您选择的被指定人之间共享。即使是 Cypherock 也无法读取",
+        "form": {
+          "locationField": {
+            "label": "卡位置和密码短语",
+            "placeholder": "写下卡的位置",
+            "tooltip": "写下另一张被指定人需要获取的卡的位置。被指定人只有在获取另一张卡后才能恢复加密资产。请记住，这张卡应不同于您可能已经给过的被指定人卡。\n您还可以在此消息中包含密码短语。"
+          },
+          "personalMessage": {
+            "label": "个人信息",
+            "placeholder": "写下您的信息",
+            "tooltip": "这可以包括您遗嘱/信息给被指定人和其他重要的信息，您可能想让被指定人知道，比如您的加密货币交易所帐户详细信息，您拥有的硬币等等。"
+          }
+        },
+        "messageBox": {
+          "warning": "确保您清晰地描述卡的位置供被指定人使用"
+        }
+      },
+      "executor": {
+        "title": "为执行者添加信息",
+        "subtitle": "请注意，发给执行者的信息未加密",
+        "tooltip": "此信息将在触发恢复的情况下接收到执行者，建议不要在这里添加任何重要信息",
+        "form": {
+          "messageField": {
+            "label": "信息",
+            "placeholder": "写下您的信息"
+          }
+        }
+      }
+    },
+    "reminder": {
+      "heading": "提醒",
+      "title": "提醒设置"
+    },
+    "summary": {
+      "heading": "摘要",
+      "title": "摘要",
+      "subtitle": "在加密到设备之前请核对所有详细信息",
+      "ownerDetails": {
+        "title": "所有者详细信息",
+        "form": {
+          "userNameField": {
+            "label": "姓名"
+          },
+          "primaryEmailField": {
+            "label": "主电子邮箱"
+          },
+          "secondaryEmailField": {
+            "label": "备用电子邮箱"
+          },
+          "reminderPeriodField": {
+            "label": "提醒周期",
+            "input": "每 ${month} 月",
+            "inputPlural": "每 ${month} 个月"
+          }
+        }
+      },
+      "nomineeDetails": {
+        "title": "被指定人 #",
+        "form": {
+          "nomineeNameField": {
+            "label": "姓名"
+          },
+          "primaryEmailField": {
+            "label": "主电子邮箱"
+          },
+          "secondaryEmailField": {
+            "label": "备用电子邮箱"
+          }
+        }
+      },
+      "cardLocation": {
+        "title": "卡位置和密码短语"
+      },
+      "personalMessage": {
+        "title": "个人信息"
+      },
+      "executorDetails": {
+        "title": "执行者",
+        "form": {
+          "nomineeNameField": {
+            "label": "姓名"
+          },
+          "primaryEmailField": {
+            "label": "主电子邮箱"
+          },
+          "secondaryEmailField": {
+            "label": "备用电子邮箱"
+          },
+          "assignTo": {
+            "label": "分配给"
+          }
+        }
+      },
+      "executorMessage": {
+        "title": "执行者信息"
+      }
+    },
+    "encryption": {
+      "heading": "加密",
+      "confirm": {
+        "title": "按照 X1 Vault 上的指示验证被指定人的信息",
+        "subtext": "您可以在下一步中加密信息",
+        "actions": {
+          "confirmOnDevice": "在设备上确认信息验证",
+          "verifyLocation": "验证您设备中的卡位置"
+        },
+        "messageBox": {
+          "danger": "阅读整篇文字并确认在设备中显示的信息与您在 cySync 中输入的信息一致"
+        }
+      },
+      "device": {
+        "title": "按照 X1 Vault 上的指示加密钱包 PIN",
+        "subtext": "在听到 2 次蜂鸣声后抬起您的卡",
+        "tooltip": "在 X1 设备下方点击任意一张 X1 卡以加密信息，不要取出卡，直到听到 2 次蜂鸣声",
+        "actions": {
+          "confirmOnDevice": "在设备上确认加密",
+          "tapCard": "输入 PIN 并点击任意一张卡"
+        },
+        "messageBox": {
+          "warning": "PIN 将由 X1 卡加密"
+        }
+      },
+      "loading": {
+        "title": "请稍候，我们正在向服务器发送加密数据",
+        "subTitle": "不要断开连接或关闭应用程序"
+      },
+      "success": {
+        "title": "被指定人的信息已成功加密",
+        "subtext": "要完成您的黄金计划设置，您现在可以继续购买计划"
+      }
+    },
+    "checkout": {
+      "heading": "结账",
+      "payment": {
+        "title": "完成您的付款",
+        "subtext": "您需要在 Cypherock 网站上购买计划，然后在下面的'优惠券代码'部分应用生成的优惠券代码以完成购买"
+      },
+      "greeting": {
+        "title": "谢谢！",
+        "subtext": "您的黄金计划现已激活"
+      }
+    }
+  },
+  "swap": {
+    "title": "交换",
+    "detailsInput": {
+      "common": {
+        "searchText": "搜索",
+        "walletPlaceholder": "选择钱包"
+      },
+      "from": {
+        "title": "从",
+        "accountPlaceholder": "扣款账户",
+        "amountLabel": "发送金额",
+        "amountError": "余额不足"
+      },
+      "to": {
+        "title": "到",
+        "accountPlaceholder": "收款账户",
+        "amountLabel": "您将收到"
+      },
+      "offers": {
+        "title": "您的最佳报价",
+        "initialText": "选择钱包和账户以获取报价",
+        "searchingForOffers": "正在搜索您的最佳报价",
+        "bestOffer": "最佳报价",
+        "fixedRate": "固定汇率",
+        "fixedRateTooltip": "固定汇率确保您获得的报价不受价格变化的影响。",
+        "networkFee": "网络费用",
+        "networkFeeTooltip": "该区块链网络将对此次交换收取费用。只有外发（发送）网络费用会加在报价金额之上——入账（接收）费用已包含在报价中。",
+        "quotesFound": "找到 ${num} 条报价",
+        "timerText": "${time} 后更新",
+        "buttons": {
+          "continue": "继续"
+        },
+        "errors": {
+          "sameAsset": "无法交换相同资产",
+          "noOffers": "没有可用的报价",
+          "currencyNotSupported": "不支持的货币",
+          "amountRange": "金额应在 ${min} 和 ${max} 之间",
+          "noQuotes": "未找到报价",
+          "noInternet": "无网络连接",
+          "enterAmount": "输入金额以获取报价",
+          "selectDifferentCoinPair": "选择不同的币对"
+        }
+      }
+    },
+    "topBar": {
+      "history": "历史"
+    },
+    "swapReceive": {
+      "errors": {
+        "notSuccessful": "接收流程未成功",
+        "invalidInputs": "发起兑换的输入无效",
+        "accountNotSelected": "未选择账户"
+      }
+    },
+    "swapSend": {
+      "errors": {
+        "notSuccessfull": "发送流程未成功",
+        "cannotStart": "无法启动发送流程",
+        "invalidPrerequisite": "交换发送的前提条件无效"
+      }
+    },
+    "swapSummary": {
+      "heading": "交换摘要",
+      "from": "从",
+      "to": "到",
+      "amount": "金额",
+      "provider": "提供商",
+      "networkFee": "网络费用",
+      "totalToDebit": "扣除总额"
+    },
+    "swapStatus": {
+      "heading": {
+        "success": "交换成功",
+        "pending": "交换待处理",
+        "failed": "交换失败"
+      },
+      "description": "",
+      "amountSent": "已发送金额",
+      "amountReceived": "接收的金额",
+      "transactionID": "交易 ID",
+      "messageBox": {
+        "warning": "当区块链确认交易时，您的账户余额将更新",
+        "danger": "网络返回以下错误："
+      },
+      "button": {
+        "backToSwap": "返回交换"
+      }
+    },
+    "commonErrors": {
+      "timeout": {
+        "title": "交换超时",
+        "description": "交换请求已超时。如果问题仍然存在，请重试或联系支持。"
+      }
+    }
+  }
+}

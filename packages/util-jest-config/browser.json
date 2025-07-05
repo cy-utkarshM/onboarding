@@ -1,0 +1,33 @@
+{
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.ts",
+    "!src/**/*.test.ts",
+    "!src/**/__fixtures__/*"
+  ],
+  "coverageReporters": ["json", "lcov"],
+  "testTimeout": 500,
+  "preset": "ts-jest",
+  "transform": {
+    "^.+\\.tsx?$": ["ts-jest", {}],
+    "^.+\\.svg$": "<rootDir>/svgTransform.js"
+  },
+  "testEnvironment": "jsdom",
+  "rootDir": ".",
+  "testPathIgnorePatterns": ["/node_modules/", "/__fixtures__/", "/dist/"],
+  "testMatch": [
+    "**/tests/**/*.[jt]s?(x)",
+    "**/__tests__/**/*.[jt]s?(x)",
+    "!**/setupTests.[jt]s?(x)",
+    "!**/__mocks__/**/*.[jt]s?(x)",
+    "!**/__helpers__/**/*.[jt]s?(x)",
+    "!**/.stryker-tmp/**/*.[jt]s?(x)"
+  ],
+  "modulePathIgnorePatterns": ["<rootDir>/.stryker-tmp"],
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "modulePaths": ["<rootDir>"],
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|gif|webm)$": "identity-obj-proxy"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["turbo.json"],
+  "pipeline": {
+    "packages": {
+      "inputs": ["packages/*"]
+    },
+    "prebuild": {
+      "cache": true
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false
+    },
+    "dev:setup": {
+      "dependsOn": ["^dev:setup"],
+      "cache": false
+    },
+    "build": {
+      "dependsOn": ["prebuild", "^build"],
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "tsconfig_cjs.json"]
+    },
+    "build:dirty": {
+      "dependsOn": ["^build:dirty"],
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "tsconfig_cjs.json"]
+    },
+    "@cypherock/cysync-ui#build": {
+      "dependsOn": ["prebuild", "^build"],
+      "outputs": ["dist/**"],
+      "inputs": [
+        "!src/assets/icons/generated/**",
+        "src/**",
+        "package.json",
+        "tsconfig.json",
+        "tsconfig_cjs.json"
+      ]
+    },
+    "@cypherock/cysync-ui#prebuild": {
+      "cache": true,
+      "outputs": ["src/assets/icons/generated/**"],
+      "inputs": ["icons/**"]
+    },
+    "@cypherock/cysync-core#prebuild": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": ["src/generated/**"],
+      "inputs": [
+        "package.json",
+        "scripts/prebuild.sh",
+        "scripts/dependencies/index.js",
+        "scripts/dependencies/package.json"
+      ]
+    },
+    "@cypherock/cysync-core#build": {
+      "dependsOn": ["prebuild", "^build"],
+      "outputs": ["dist/**"],
+      "inputs": [
+        "src/**",
+        "package.json",
+        "tsconfig.json",
+        "tsconfig_cjs.json",
+        "!src/generated/**"
+      ]
+    },
+    "@cypherock/cysync-core-workers#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["lib/**"],
+      "inputs": ["src/**", "package.json", "tsconfig.json"]
+    },
+    "@cypherock/cysync-cli#dev": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
+    "@cypherock/cysync-desktop#build": {
+      "dependsOn": ["@cypherock/cysync-desktop#prebuild", "^build"],
+      "outputs": ["dist/**", "dist-electron/**"],
+      "inputs": [
+        "!renderer/generated/**",
+        "src/**",
+        "renderer/**",
+        "public/**",
+        "html/**",
+        "package.json",
+        "tsconfig.json",
+        "tsconfig.node.json",
+        "vite.config.js",
+        "vite.loading.config.js"
+      ]
+    },
+    "make": {
+      "dependsOn": ["build", "^make"],
+      "cache": false
+    },
+    "pre-commit": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**", "tests/**"],
+      "outputs": ["coverage/**"]
+    },
+    "e2e": {
+      "dependsOn": ["build"],
+      "inputs": ["e2e/**"],
+      "outputs": [
+        "playwright-report/**",
+        "test-results/**",
+        "screenshots/**",
+        "videos/**"
+      ]
+    },
+    "lint:check": {
+      "inputs": ["src/**", "tests/**"]
+    },
+    "lint": {
+      "inputs": ["src/**", "tests/**"],
+      "cache": false
+    },
+    "pretty:check": {
+      "inputs": ["src/**", "tests/**"]
+    },
+    "pretty": {
+      "inputs": ["src/**", "tests/**"],
+      "cache": false
+    },
+    "storybook": {
+      "cache": false
+    },
+    "build:storybook": {
+      "cache": true
+    },
+    "@cypherock/cysync-ui#build:storybook": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "package.json", ".storybook/**"],
+      "outputs": ["storybook-static/**"],
+      "cache": true
+    },
+    "@cypherock/cysync-automation-scripts#erc20-diff": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
+    "@cypherock/cysync-automation-scripts#gen-erc20-list": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
+    "@cypherock/cysync-automation-scripts#download-erc20-images": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
+    "@cypherock/cysync-automation-scripts#gen-translations": {
+      "dependsOn": ["build"],
+      "cache": true
+    }
+  }
+}

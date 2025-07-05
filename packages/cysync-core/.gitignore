@@ -1,0 +1,8 @@
+.turbo
+dist
+coverage
+
+#generated
+src/generated
+workers/dist
+workers/parcel
