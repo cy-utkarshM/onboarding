@@ -1,0 +1,59 @@
+{
+  "name": "cypherock-minimalist-cli",
+  "version": "1.0.0",
+  "description": "Minimalist Cypherock CLI with TUI for onboarding",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cypherock-cli": "./bin/run"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "dev": "npm run build && ./bin/run",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "npm run build && oclif manifest"
+  },
+  "keywords": [
+    "cypherock",
+    "cli",
+    "tui",
+    "minimalist"
+  ],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "oclif": {
+    "bin": "cypherock-cli",
+    "dirname": "cypherock-cli",
+    "commands": "./dist/commands",
+    "topicSeparator": " "
+  },
+  "dependencies": {
+    "@cypherock/sdk-app-manager": "^0.0.33",
+    "@cypherock/sdk-hw-hid": "^0.0.23",
+    "@cypherock/sdk-hw-serialport": "^0.0.20",
+    "@cypherock/sdk-interfaces": "^0.0.16",
+    "@cypherock/sdk-utils": "^0.0.19",
+    "@inquirer/input": "^1.2.5",
+    "@oclif/core": "^2.9.0",
+    "blessed": "^0.1.81",
+    "colors": "^1.4.0",
+    "ora": "^6.3.1",
+    "semver": "^7.5.3"
+  },
+  "devDependencies": {
+    "@types/blessed": "^0.1.25",
+    "@types/node": "18.15.11",
+    "@types/semver": "^7.5.8",
+    "@types/serialport": "^8.0.5",
+    "eslint": "^8.57.0",
+    "oclif": "^3.9.1",
+    "rimraf": "^5.0.1",
+    "tsc-alias": "^1.8.6",
+    "typescript": "^4.9.5"
+  }
+}
