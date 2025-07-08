@@ -1,23 +1,22 @@
+// src/services/onboarding/index.ts
+
 import '../../config';
 
-import { ManagerApp, OnboardingStep } from '@cypherock/sdk-app-manager';
-import { DeviceState } from '@cypherock/sdk-interfaces';
+import { OnboardingStep } from '@cypherock/sdk-app-manager';
+import { IDevice } from '@cypherock/sdk-interfaces';
 import { Flags } from '@oclif/core';
 import colors from 'colors/safe';
 
+// FIXED: Import OnboardingResult along with the function
 import {
-  authAllCards,
-  authDevice,
-  trainCard,
-  trainJoystick,
-  updateFirmwareAndGetApp,
-} from '~/services';
-import { BaseCommand } from '~/utils';
+  runOnboardingForDevice,
+  OnboardingResult,
+} from '~/services/onboarding/task';
+import { BaseCommand, getDevices } from '~/utils';
 
-export default class OnboardingSetup extends BaseCommand<
-  typeof OnboardingSetup
-> {
-  static description = 'Onboard new device';
+export default class Onboarding extends BaseCommand<typeof Onboarding> {
+  static description =
+    'Onboard one or more new devices in parallel. Connect all devices before running.';
 
   static examples = [`$ <%= config.bin %> <%= command.id %>`];
 
@@ -26,87 +25,93 @@ export default class OnboardingSetup extends BaseCommand<
       min: OnboardingStep.ONBOARDING_STEP_VIRGIN_DEVICE,
       max: OnboardingStep.ONBOARDING_STEP_CARD_CHECKUP,
       char: 's',
-      description: 'Onboarding step to start from',
+      description: 'Force onboarding to start from a specific step for all devices',
     }),
   };
 
-  protected connectToDevice = true;
-
-  // eslint-disable-next-line class-methods-use-this
-  async runOnboardingSteps(app: ManagerApp, deviceStep: OnboardingStep) {
-    let isPairRequired = false;
-
-    const stepHandlers: Record<
-      OnboardingStep,
-      (() => Promise<void>) | undefined
-    > = {
-      [OnboardingStep.ONBOARDING_STEP_VIRGIN_DEVICE]: async () => {
-        await authDevice(app);
-      },
-      [OnboardingStep.ONBOARDING_STEP_DEVICE_AUTH]: async () => {
-        await trainJoystick(app);
-      },
-      [OnboardingStep.ONBOARDING_STEP_JOYSTICK_TRAINING]: async () => {
-        const result = await trainCard(app);
-        isPairRequired = !result.cardPaired;
-      },
-      [OnboardingStep.ONBOARDING_STEP_CARD_CHECKUP]: async () => {
-        await authAllCards({ app, isPairRequired });
-      },
-      [OnboardingStep.UNRECOGNIZED]: undefined,
-      [OnboardingStep.ONBOARDING_STEP_CARD_AUTHENTICATION]: undefined,
-      [OnboardingStep.ONBOARDING_STEP_COMPLETE]: undefined,
-    };
-
-    let startingStep = deviceStep;
-
-    // Start from card training when device is waiting for card auth
-    if (startingStep === OnboardingStep.ONBOARDING_STEP_CARD_CHECKUP) {
-      startingStep = OnboardingStep.ONBOARDING_STEP_JOYSTICK_TRAINING;
-    }
-
-    for (
-      let step = startingStep;
-      step < OnboardingStep.ONBOARDING_STEP_CARD_AUTHENTICATION;
-      step += 1
-    ) {
-      const handler = stepHandlers[step];
-      if (!handler) {
-        return;
-      }
-
-      await handler();
-    }
-  }
+  // Set to false: This command will manage its own connections,
+  // not use the global singleton from BaseCommand.
+  protected connectToDevice = false;
 
   async run(): Promise<void> {
-    const { flags } = await this.parse(OnboardingSetup);
+    const { flags } = await this.parse(Onboarding);
 
-    this.log(colors.blue('Starting onboarding'));
+    // FIXED: Corrected colors syntax to composition
+    this.log(colors.bold(colors.blue('--- Cypherock Parallel Onboarding Tool ---')));
+    this.log('🔎 Discovering connected devices...');
 
-    let app = await ManagerApp.create(this.connection);
-    const deviceState = await this.connection.getDeviceState();
+    const devices = await getDevices();
 
-    if (deviceState === DeviceState.BOOTLOADER) {
-      this.log(colors.yellow('Device is in bootloader mode, updating...'));
-      app = await updateFirmwareAndGetApp(app);
-    }
-
-    if (!(await app.isSupported())) {
-      this.log(colors.yellow('Device is not supported, updating...'));
-      app = await updateFirmwareAndGetApp(app);
-    }
-
-    const deviceInfo = await app.getDeviceInfo();
-
-    if (!deviceInfo.isInitial) {
-      this.log(colors.green('Device is already onboarded'));
+    if (devices.length === 0) {
+      this.log(
+        colors.yellow(
+          '\nNo devices found. Please connect your Cypherock device(s) and try again.',
+        ),
+      );
       return;
     }
 
-    await this.runOnboardingSteps(app, flags.step ?? deviceInfo.onboardingStep);
+    this.log(
+      colors.green(
+        `Found ${devices.length} device(s). Starting onboarding...`,
+      ),
+    );
+    this.log(
+      colors.gray(
+        'Follow the instructions on each device screen. The process will run in parallel.',
+      ),
+    );
 
-    this.log(colors.green('Onboarding Completed'));
-    await app.destroy();
+    // Create an array of promises. Each promise is a full, independent onboarding task.
+    const onboardingPromises = devices.map((device: IDevice) =>
+      runOnboardingForDevice(device, flags.step),
+    );
+
+    // Wait for all tasks to complete, whether they succeed or fail.
+    const results = await Promise.all(onboardingPromises);
+
+    // Display the final summary report
+    // FIXED: Corrected colors syntax to composition
+    this.log(colors.bold(colors.blue('\n--- Onboarding Summary ---')));
+
+    let successCount = 0;
+    let skippedCount = 0;
+    let failedCount = 0;
+
+    // This is now correctly typed and will work
+    results.forEach((result: OnboardingResult) => {
+      switch (result.status) {
+        case 'success':
+          this.log(
+            `✔️  ${colors.green('[SUCCESS]')} Device ${result.deviceSerial}: ${
+              result.message
+            }`,
+          );
+          successCount++;
+          break;
+        case 'skipped':
+          this.log(
+            `☑️  ${colors.yellow('[SKIPPED]')} Device ${result.deviceSerial}: ${
+              result.message
+            }`,
+          );
+          skippedCount++;
+          break;
+        case 'failed':
+          this.log(
+            `❌ ${colors.red('[FAILURE]')} Device ${result.deviceSerial}: ${
+              result.message
+            } ${result.code ? `(Code: ${result.code})` : ''}`,
+          );
+          failedCount++;
+          break;
+        default:
+          break;
+      }
+    });
+
+    this.log(
+      `\nReport: ${successCount} Succeeded, ${failedCount} Failed, ${skippedCount} Skipped.`,
+    );
   }
 }

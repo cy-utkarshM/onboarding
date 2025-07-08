@@ -1,6 +1,6 @@
 const config = {
   API_CYPHEROCK: 'https://dev-api.cypherock.com',
-  ALLOW_PRERELEASE: true,
+  ALLOW_PRERELEASE: false,
   LOG_LEVEL: 'error',
 };
 

@@ -1,3 +1,5 @@
+// src/services/onboarding/task.ts
+
 import { ManagerApp, OnboardingStep } from '@cypherock/sdk-app-manager';
 import { DeviceConnection as DeviceConnectionHID } from '@cypherock/sdk-hw-hid';
 import { DeviceConnection as DeviceConnectionSerial } from '@cypherock/sdk-hw-serialport';
@@ -17,6 +19,14 @@ import {
   updateFirmwareAndGetApp,
 } from '~/services/device';
 
+// ADDED: Define and export the result type here
+export interface OnboardingResult {
+  deviceSerial: string;
+  status: 'success' | 'skipped' | 'failed';
+  message: string;
+  code?: any;
+}
+
 // Helper to create a connection for a specific device without using the global singleton
 const createIsolatedConnection = async (
   device: IDevice,
@@ -31,7 +41,8 @@ const createIsolatedConnection = async (
 // It is self-contained and manages its own connection.
 async function runSteps(app: ManagerApp, startStep: OnboardingStep) {
   let isPairRequired = false;
-  const deviceId = app.getDeviceSerial();
+  const deviceInfo = await getDeviceInfo(app);
+  const deviceId = deviceInfo.deviceSerial;
 
   const stepHandlers: Record<OnboardingStep, (() => Promise<void>) | undefined> =
     {
@@ -75,10 +86,11 @@ async function runSteps(app: ManagerApp, startStep: OnboardingStep) {
   }
 }
 
+// FIXED: Added explicit return type Promise<OnboardingResult>
 export async function runOnboardingForDevice(
   device: IDevice,
   startFromStep?: OnboardingStep,
-) {
+): Promise<OnboardingResult> {
   let connection: IDeviceConnection | undefined;
   const deviceId = device.path; // Use path as a temporary ID before we get serial
 
@@ -88,7 +100,8 @@ export async function runOnboardingForDevice(
     connection = await createIsolatedConnection(device);
 
     let app = await ManagerApp.create(connection);
-    const deviceSerial = app.getDeviceSerial(); // Get the real serial for logging
+    const initialDeviceInfo = await getDeviceInfo(app);
+    const deviceSerial = initialDeviceInfo.deviceSerial;
 
     // 2. Run firmware updates if necessary
     const deviceState = await connection.getDeviceState();
@@ -132,7 +145,7 @@ export async function runOnboardingForDevice(
   } catch (error: any) {
     // 5. On failure, return a structured error
     return {
-      deviceSerial: device.serialNumber ?? deviceId,
+      deviceSerial: deviceId,
       status: 'failed',
       message: error.message,
       code: error.code,
