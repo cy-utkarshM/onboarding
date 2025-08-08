@@ -11,7 +11,8 @@
     "build": "rimraf dist && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
     "dev": "npm run build && ./bin/run",
     "postpack": "rm -f oclif.manifest.json",
-    "prepack": "npm run build && oclif manifest"
+    "prepack": "npm run build && oclif manifest",
+    "test": "jest"
   },
   "keywords": [
     "cypherock",
@@ -48,12 +49,15 @@
   },
   "devDependencies": {
     "@types/blessed": "^0.1.25",
+    "@types/jest": "^30.0.0",
     "@types/node": "18.15.11",
     "@types/semver": "^7.5.8",
     "@types/serialport": "^8.0.5",
     "eslint": "^8.57.0",
+    "jest": "^30.0.5",
     "oclif": "^3.9.1",
     "rimraf": "^5.0.1",
+    "ts-jest": "^29.4.1",
     "tsc-alias": "^1.8.6",
     "typescript": "^4.9.5"
   }
