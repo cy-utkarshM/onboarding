@@ -1,5 +1,3 @@
-// src/services/onboarding/task.ts
-
 import { ManagerApp, OnboardingStep } from '@cypherock/sdk-app-manager';
 import { DeviceConnection as DeviceConnectionHID } from '@cypherock/sdk-hw-hid';
 import { DeviceConnection as DeviceConnectionSerial } from '@cypherock/sdk-hw-serialport';
@@ -19,7 +17,6 @@ import {
   updateFirmwareAndGetApp,
 } from '~/services/device';
 
-// ADDED: Define and export the result type here
 export interface OnboardingResult {
   deviceSerial: string;
   status: 'success' | 'skipped' | 'failed';
@@ -27,7 +24,6 @@ export interface OnboardingResult {
   code?: any;
 }
 
-// Helper to create a connection for a specific device without using the global singleton
 const createIsolatedConnection = async (
   device: IDevice,
 ): Promise<IDeviceConnection> => {
@@ -37,8 +33,6 @@ const createIsolatedConnection = async (
   return DeviceConnectionSerial.connect(device);
 };
 
-// This function encapsulates the entire onboarding logic for a single device.
-// It is self-contained and manages its own connection.
 async function runSteps(app: ManagerApp, startStep: OnboardingStep) {
   let isPairRequired = false;
   const deviceInfo = await getDeviceInfo(app);
@@ -47,23 +41,19 @@ async function runSteps(app: ManagerApp, startStep: OnboardingStep) {
   const stepHandlers: Record<OnboardingStep, (() => Promise<void>) | undefined> =
     {
       [OnboardingStep.ONBOARDING_STEP_VIRGIN_DEVICE]: async () => {
-        console.log(colors.cyan(`[${deviceId}] Authenticating device...`));
+        // Console logs are now handled by the TUI, so we remove them here
         await authDevice(app);
       },
       [OnboardingStep.ONBOARDING_STEP_DEVICE_AUTH]: async () => {
-        console.log(colors.cyan(`[${deviceId}] Starting joystick training...`));
         await trainJoystick(app);
       },
       [OnboardingStep.ONBOARDING_STEP_JOYSTICK_TRAINING]: async () => {
-        console.log(colors.cyan(`[${deviceId}] Starting card training...`));
         const result = await trainCard(app);
         isPairRequired = !result.cardPaired;
       },
       [OnboardingStep.ONBOARDING_STEP_CARD_CHECKUP]: async () => {
-        console.log(colors.cyan(`[${deviceId}] Authenticating all cards...`));
         await authAllCards({ app, isPairRequired });
       },
-      // Steps we don't handle
       [OnboardingStep.UNRECOGNIZED]: undefined,
       [OnboardingStep.ONBOARDING_STEP_CARD_AUTHENTICATION]: undefined,
       [OnboardingStep.ONBOARDING_STEP_COMPLETE]: undefined,
@@ -86,40 +76,47 @@ async function runSteps(app: ManagerApp, startStep: OnboardingStep) {
   }
 }
 
-// FIXED: Added explicit return type Promise<OnboardingResult>
 export async function runOnboardingForDevice(
   device: IDevice,
   startFromStep?: OnboardingStep,
 ): Promise<OnboardingResult> {
   let connection: IDeviceConnection | undefined;
-  const deviceId = device.path; // Use path as a temporary ID before we get serial
+  // Use device path for initial identification
+  const deviceId = device.path;
 
   try {
-    // 1. Create an ISOLATED connection for this device
-    console.log(colors.gray(`[${deviceId}] Creating connection...`));
     connection = await createIsolatedConnection(device);
-
     let app = await ManagerApp.create(connection);
     const initialDeviceInfo = await getDeviceInfo(app);
     const deviceSerial = initialDeviceInfo.deviceSerial;
 
-    // 2. Run firmware updates if necessary
     const deviceState = await connection.getDeviceState();
     if (deviceState === DeviceState.BOOTLOADER) {
-      console.log(
-        colors.yellow(`[${deviceSerial}] Device in bootloader mode, updating...`),
-      );
-      app = await updateFirmwareAndGetApp(app);
+      // MODIFIED: Calling the refactored update function
+      const { newApp, newConnection } = await updateFirmwareAndGetApp({
+        app,
+        device,
+      });
+      // CRITICAL: Replace old connection and app instances with the new ones
+      await app.destroy();
+      await connection.destroy();
+      app = newApp;
+      connection = newConnection;
     }
 
     if (!(await app.isSupported())) {
-      console.log(
-        colors.yellow(`[${deviceSerial}] App version not supported, updating...`),
-      );
-      app = await updateFirmwareAndGetApp(app);
+      // MODIFIED: Calling the refactored update function
+      const { newApp, newConnection } = await updateFirmwareAndGetApp({
+        app,
+        device,
+      });
+      // CRITICAL: Replace old connection and app instances with the new ones
+      await app.destroy();
+      await connection.destroy();
+      app = newApp;
+      connection = newConnection;
     }
 
-    // 3. Check if device is already onboarded
     const deviceInfo = await getDeviceInfo(app);
     if (!deviceInfo.isInitial) {
       return {
@@ -129,12 +126,7 @@ export async function runOnboardingForDevice(
       };
     }
 
-    // 4. Run the sequential onboarding steps
-    console.log(
-      colors.blue(`[${deviceSerial}] Starting onboarding steps...`),
-    );
     await runSteps(app, startFromStep ?? deviceInfo.onboardingStep);
-
     await app.destroy();
 
     return {
@@ -143,18 +135,15 @@ export async function runOnboardingForDevice(
       message: 'Onboarding completed successfully.',
     };
   } catch (error: any) {
-    // 5. On failure, return a structured error
     return {
-      deviceSerial: deviceId,
+      deviceSerial: deviceId, // May not have serial yet on early failure
       status: 'failed',
       message: error.message,
       code: error.code,
     };
   } finally {
-    // 6. CRITICAL: Always clean up the isolated connection
     if (connection) {
       await connection.destroy();
-      console.log(colors.gray(`[${deviceId}] Connection closed.`));
     }
   }
 }

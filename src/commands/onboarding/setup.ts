@@ -1,7 +1,9 @@
+// src/commands/onboarding/setup.ts
+
 import '../../config';
 
 import { ManagerApp, OnboardingStep } from '@cypherock/sdk-app-manager';
-import { DeviceState } from '@cypherock/sdk-interfaces';
+import { DeviceState, IDevice } from '@cypherock/sdk-interfaces';
 import { Flags } from '@oclif/core';
 import colors from 'colors/safe';
 
@@ -12,7 +14,7 @@ import {
   trainJoystick,
   updateFirmwareAndGetApp,
 } from '~/services';
-import { BaseCommand } from '~/utils';
+import { BaseCommand, getDevices } from '~/utils';
 
 export default class OnboardingSetup extends BaseCommand<
   typeof OnboardingSetup
@@ -87,14 +89,28 @@ export default class OnboardingSetup extends BaseCommand<
     let app = await ManagerApp.create(this.connection);
     const deviceState = await this.connection.getDeviceState();
 
+    // We need the device object to pass to the update function.
+    // BaseCommand connects to the first device found, so we do the same.
+    const devices = await getDevices();
+    if (devices.length === 0) {
+      throw new Error('No device found for setup.');
+    }
+    const device: IDevice = devices[0];
+
     if (deviceState === DeviceState.BOOTLOADER) {
       this.log(colors.yellow('Device is in bootloader mode, updating...'));
-      app = await updateFirmwareAndGetApp(app);
+      // Correctly call the update function and handle its new return value
+      const { newApp, newConnection } = await updateFirmwareAndGetApp({ app, device });
+      app = newApp;
+      this.connection = newConnection; // Update the base command's connection
     }
 
     if (!(await app.isSupported())) {
-      this.log(colors.yellow('Device is not supported, updating...'));
-      app = await updateFirmwareAndGetApp(app);
+      this.log(colors.yellow('App version not supported, updating...'));
+      // Correctly call the update function and handle its new return value
+      const { newApp, newConnection } = await updateFirmwareAndGetApp({ app, device });
+      app = newApp;
+      this.connection = newConnection; // Update the base command's connection
     }
 
     const deviceInfo = await app.getDeviceInfo();

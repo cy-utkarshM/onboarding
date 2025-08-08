@@ -1,5 +1,5 @@
 const config = {
-  API_CYPHEROCK: 'https://dev-api.cypherock.com',
+  API_CYPHEROCK: 'https://api.cypherock.com',
   ALLOW_PRERELEASE: false,
   LOG_LEVEL: 'error',
 };

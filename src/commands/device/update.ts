@@ -1,14 +1,16 @@
+// src/commands/device/update.ts
+
 // eslint-disable-next-line import/order
 import config from '../../config';
 
 import { ManagerApp } from '@cypherock/sdk-app-manager';
-import { DeviceState } from '@cypherock/sdk-interfaces';
+import { DeviceState, IDevice } from '@cypherock/sdk-interfaces';
 import { Flags } from '@oclif/core';
 import colors from 'colors/safe';
 import semver from 'semver';
 
 import { updateFirmwareAndGetApp } from '~/services';
-import { BaseCommand } from '~/utils';
+import { BaseCommand, getDevices } from '~/utils';
 
 export default class DeviceUpdate extends BaseCommand<typeof DeviceUpdate> {
   static description = 'Update firmware on device';
@@ -53,7 +55,16 @@ export default class DeviceUpdate extends BaseCommand<typeof DeviceUpdate> {
       }
     }
 
-    await updateFirmwareAndGetApp(app);
+    // Get the device object to pass to the update function.
+    // BaseCommand connects to the first device, so we fetch it here.
+    const devices = await getDevices();
+    if (devices.length === 0) {
+      throw new Error('No device found to update.');
+    }
+    const device: IDevice = devices[0];
+
+    // Call the function with the correct object structure { app, device }
+    await updateFirmwareAndGetApp({ app, device });
 
     this.log(colors.green('Device firmware Update successful'));
     await app.destroy();

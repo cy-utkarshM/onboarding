@@ -1,13 +1,12 @@
-// src/services/onboarding/index.ts
-
 import '../../config';
 
 import { OnboardingStep } from '@cypherock/sdk-app-manager';
 import { IDevice } from '@cypherock/sdk-interfaces';
 import { Flags } from '@oclif/core';
 import colors from 'colors/safe';
+import { Listr, ListrTask } from 'listr2'; // MODIFIED: Using Listr2 for a better TUI
 
-// FIXED: Import OnboardingResult along with the function
+// OnboardingResult is already imported, which is good
 import {
   runOnboardingForDevice,
   OnboardingResult,
@@ -25,19 +24,19 @@ export default class Onboarding extends BaseCommand<typeof Onboarding> {
       min: OnboardingStep.ONBOARDING_STEP_VIRGIN_DEVICE,
       max: OnboardingStep.ONBOARDING_STEP_CARD_CHECKUP,
       char: 's',
-      description: 'Force onboarding to start from a specific step for all devices',
+      description:
+        'Force onboarding to start from a specific step for all devices',
     }),
   };
 
-  // Set to false: This command will manage its own connections,
-  // not use the global singleton from BaseCommand.
   protected connectToDevice = false;
 
   async run(): Promise<void> {
     const { flags } = await this.parse(Onboarding);
 
-    // FIXED: Corrected colors syntax to composition
-    this.log(colors.bold(colors.blue('--- Cypherock Parallel Onboarding Tool ---')));
+    this.log(
+      colors.bold(colors.blue('--- Cypherock Parallel Onboarding Tool ---')),
+    );
     this.log('🔎 Discovering connected devices...');
 
     const devices = await getDevices();
@@ -51,67 +50,68 @@ export default class Onboarding extends BaseCommand<typeof Onboarding> {
       return;
     }
 
-    this.log(
-      colors.green(
-        `Found ${devices.length} device(s). Starting onboarding...`,
-      ),
-    );
+    this.log(colors.green(`Found ${devices.length} device(s).`));
     this.log(
       colors.gray(
-        'Follow the instructions on each device screen. The process will run in parallel.',
+        'Follow instructions on each device. The process will run in parallel.',
       ),
     );
 
-    // Create an array of promises. Each promise is a full, independent onboarding task.
-    const onboardingPromises = devices.map((device: IDevice) =>
-      runOnboardingForDevice(device, flags.step),
-    );
+    // NEW: Create a Listr task for each device
+    const tasks: ListrTask[] = devices.map((device: IDevice) => ({
+      // Use the device path as the initial title
+      title: `Device: ${device.path}`,
+      task: async (ctx, task): Promise<void> => {
+        const result = await runOnboardingForDevice(device, flags.step);
 
-    // Wait for all tasks to complete, whether they succeed or fail.
-    const results = await Promise.all(onboardingPromises);
+        // Update task title with device serial once known
+        if (result.deviceSerial !== device.path) {
+          task.title = `Device: ${result.deviceSerial}`;
+        }
 
-    // Display the final summary report
-    // FIXED: Corrected colors syntax to composition
-    this.log(colors.bold(colors.blue('\n--- Onboarding Summary ---')));
+        // Handle the outcome
+        switch (result.status) {
+          case 'success':
+            task.output = `✔️ ${result.message}`;
+            break;
+          case 'skipped':
+            // Mark as skipped, which Listr handles nicely
+            task.skip(`☑️ ${result.message}`);
+            break;
+          case 'failed':
+            // Throw an error to make Listr mark the task as failed
+            throw new Error(
+              `❌ ${result.message} ${
+                result.code ? `(Code: ${result.code})` : ''
+              }`,
+            );
+          default:
+            break;
+        }
+      },
+      // Retry option can be useful for transient connection issues
+      options: {
+        persistentOutput: true,
+      },
+    }));
 
-    let successCount = 0;
-    let skippedCount = 0;
-    let failedCount = 0;
-
-    // This is now correctly typed and will work
-    results.forEach((result: OnboardingResult) => {
-      switch (result.status) {
-        case 'success':
-          this.log(
-            `✔️  ${colors.green('[SUCCESS]')} Device ${result.deviceSerial}: ${
-              result.message
-            }`,
-          );
-          successCount++;
-          break;
-        case 'skipped':
-          this.log(
-            `☑️  ${colors.yellow('[SKIPPED]')} Device ${result.deviceSerial}: ${
-              result.message
-            }`,
-          );
-          skippedCount++;
-          break;
-        case 'failed':
-          this.log(
-            `❌ ${colors.red('[FAILURE]')} Device ${result.deviceSerial}: ${
-              result.message
-            } ${result.code ? `(Code: ${result.code})` : ''}`,
-          );
-          failedCount++;
-          break;
-        default:
-          break;
-      }
+    // Create and run the main task list
+    const list = new Listr(tasks, {
+      concurrent: true, // Run all device tasks in parallel
+      exitOnError: false, // Don't stop other devices if one fails
+      rendererOptions: {
+        collapseErrors: false,
+        collapseSkips: false,
+      },
     });
 
-    this.log(
-      `\nReport: ${successCount} Succeeded, ${failedCount} Failed, ${skippedCount} Skipped.`,
-    );
+    try {
+      await list.run();
+    } catch (e) {
+      // Listr2 handles error display, so we don't need to do much here
+      this.log(colors.red('\nSome tasks failed. Please see details above.'));
+    }
+
+    this.log(colors.bold(colors.blue('\n--- Onboarding Complete ---')));
   }
 }
